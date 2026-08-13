@@ -1,0 +1,77 @@
+/* ============================================================
+   La filosofía del bostezo · base compartida
+   Cabecera, pie e identidad. Un solo archivo para todas las páginas.
+   Cargar SIEMPRE después del <style> propio de cada página.
+   ============================================================ */
+:root{
+  --noche:#1E2A44; --noche-900:#162034; --noche-700:#243354;
+  --marfil:#F6F1E8; --verde:#3F5A4B; --pizarra:#2F3A3D; --dorado:#C8A96B;
+  --texto:#F6F1E8; --texto-suave:rgba(246,241,232,.72); --texto-tenue:rgba(246,241,232,.52);
+  --linea:rgba(246,241,232,.14);
+  --serif:'Lora','Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --sans:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --ancho:1180px; --r:14px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* --- cabecera --------------------------------------------- */
+.cabecera{position:sticky;top:0;z-index:50;
+  background:rgba(30,42,68,.78);
+  -webkit-backdrop-filter:saturate(150%) blur(14px);
+  backdrop-filter:saturate(150%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s var(--ease),background .4s var(--ease)}
+.cabecera.fija{border-bottom-color:var(--linea);background:rgba(22,32,52,.9)}
+.cabecera__int{width:100%;max-width:var(--ancho);margin-inline:auto;
+  padding-inline:clamp(20px,5vw,40px);
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:74px}
+.cabecera .marca{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0}
+.cabecera .marca .iso{width:36px;height:36px;stroke-width:8;
+  color:var(--marfil);overflow:visible;display:block}
+.cabecera .marca-txt{font-family:var(--serif);font-size:1.02rem;line-height:1.1;
+  letter-spacing:.005em;color:var(--texto)}
+.cabecera .marca-txt span{display:block;font-style:italic;color:var(--dorado);font-size:.95em}
+.cabecera .menu{display:flex;align-items:center;gap:1.15rem;list-style:none;margin:0;padding:0}
+/* separa las páginas propias de los anclajes de la portada */
+.cabecera .menu .sep{width:1px;height:16px;background:var(--linea);flex:none;margin-inline:.35rem}
+.cabecera .menu a[data-ancla]{color:var(--texto-tenue)}
+.cabecera .menu a[data-ancla]:hover{color:var(--marfil)}
+.cabecera .menu a{position:relative;text-decoration:none;font-family:var(--sans);
+  font-size:.86rem;font-weight:400;letter-spacing:.01em;color:var(--texto-suave);
+  padding-block:.4rem;white-space:nowrap;transition:color .3s var(--ease)}
+.cabecera .menu a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--dorado);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease)}
+.cabecera .menu a:hover{color:var(--marfil)}
+.cabecera .menu a:hover::after{transform:scaleX(1)}
+.cabecera .menu a[aria-current="page"]{color:var(--dorado)}
+.cabecera .menu a[aria-current="page"]::after{transform:scaleX(1)}
+.cabecera .cta{display:inline-flex;align-items:center;white-space:nowrap;
+  font-family:var(--sans);font-weight:600;font-size:.85rem;letter-spacing:.03em;
+  text-decoration:none;border:1px solid var(--dorado);border-radius:999px;
+  padding:.55rem 1.15rem;background:var(--dorado);color:var(--noche);
+  transition:background .35s var(--ease),transform .35s var(--ease)}
+.cabecera .cta:hover{background:var(--marfil);border-color:var(--marfil);transform:translateY(-2px)}
+.cabecera .cta .corto{display:none}
+@media(max-width:1180px){.cabecera .menu{display:none}}
+@media(max-width:560px){
+  .cabecera .cta .largo{display:none}
+  .cabecera .cta .corto{display:inline}
+  .cabecera .marca-txt{font-size:.94rem}
+}
+
+/* --- pie ---------------------------------------------------- */
+.pie{border-top:1px solid var(--linea);background:var(--noche-900);
+  padding-block:2.6rem;color:var(--texto-tenue);font-family:var(--sans);font-size:.85rem}
+.pie__int{width:100%;max-width:var(--ancho);margin-inline:auto;
+  padding-inline:clamp(20px,5vw,40px);
+  display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+.pie a{color:var(--texto-suave);text-decoration:none}
+.pie a:hover{color:var(--dorado)}
+.pie__enlaces{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center}
+.pie__paleta{display:flex;gap:.4rem;align-items:center}
+.pie__paleta i{width:13px;height:13px;border-radius:50%;display:block;
+  border:1px solid rgba(246,241,232,.18)}
+
+@media(prefers-reduced-motion:reduce){
+  .cabecera,.cabecera *{transition:none!important}
+}
