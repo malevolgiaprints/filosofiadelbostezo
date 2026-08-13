@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La investigación · La filosofía del bostezo</title>
+<meta name="description" content="Una frase sobre el bostezo, abierta en las siete afirmaciones que la componen — y el estado real de la prueba de cada una. Qué está ganado, qué está en juego y qué experimento lo decide.">
+<link rel="canonical" href="https://filosofiadelbostezo.com/investigacion">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="La investigación">
+<meta property="og:description" content="Una frase sobre el bostezo, abierta en las siete afirmaciones que la componen — y el estado real de la prueba de cada una.">
+<meta property="og:url" content="https://filosofiadelbostezo.com/investigacion">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;600&display=swap">
+<style>
+:root{
+  --noche:#1E2A44; --noche-900:#162034; --noche-700:#243354;
+  --marfil:#F6F1E8; --verde:#3F5A4B; --pizarra:#2F3A3D; --dorado:#C8A96B;
+  --texto:#F6F1E8; --texto-suave:rgba(246,241,232,.72); --texto-tenue:rgba(246,241,232,.52);
+  --linea:rgba(246,241,232,.14);
+  --serif:'Lora','Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --sans:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --ancho:1180px; --r:14px; --ease:cubic-bezier(.22,.61,.36,1);
+  --medida:34rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--noche);color:var(--texto);font-family:var(--sans);
+     font-weight:300;font-size:1.0625rem;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.saltar{position:absolute;left:-9999px}
+.saltar:focus{left:1rem;top:1rem;z-index:99;background:var(--dorado);color:var(--noche-900);padding:.6rem 1rem;border-radius:6px}
+:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+
+.envoltura{max-width:var(--ancho);margin:0 auto;padding:0 1.5rem}
+
+/* cabecera */
+.cabecera{border-bottom:1px solid var(--linea);position:sticky;top:0;z-index:20;
+  background:rgba(30,42,68,.86);backdrop-filter:blur(10px)}
+.cabecera .envoltura{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--serif);font-size:.95rem;letter-spacing:.01em}
+.iso{width:26px;height:26px;color:var(--dorado);flex:none}
+.menu{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-size:.86rem;letter-spacing:.04em}
+.menu a{text-decoration:none;color:var(--texto-suave);transition:color .25s var(--ease)}
+.menu a:hover,.menu a[aria-current]{color:var(--dorado)}
+
+/* portada */
+.portada{padding:5.5rem 0 3rem;border-bottom:1px solid var(--linea)}
+.epigrafe{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado);margin:0 0 1.4rem}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.12;
+   margin:0 0 1.6rem;max-width:19ch;letter-spacing:-.015em}
+.entradilla{font-size:1.2rem;color:var(--texto-suave);max-width:var(--medida);margin:0}
+
+/* cuerpo */
+main section{padding:3.4rem 0;border-bottom:1px solid var(--linea)}
+main section:last-of-type{border-bottom:0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,2.9vw,1.9rem);
+   line-height:1.25;margin:0 0 1.5rem;max-width:24ch;letter-spacing:-.01em}
+p{max-width:var(--medida);margin:0 0 1.25rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:600;color:var(--marfil)}
+em{font-style:italic}
+.suelta{font-family:var(--serif);font-size:1.5rem;line-height:1.4;color:var(--marfil);
+  max-width:22ch;margin:2rem 0;padding-left:1.4rem;border-left:2px solid var(--dorado)}
+
+/* SIGNATURE: etiquetas de confianza */
+.chip{display:inline-flex;align-items:center;gap:.42rem;font-family:var(--sans);
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:.24rem .62rem;border-radius:100px;border:1px solid;white-space:nowrap;
+  vertical-align:middle;translate:0 -1px}
+.chip::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.chip.hecho{color:#9CC5A8;border-color:rgba(156,197,168,.42);background:rgba(63,90,75,.3)}
+.chip.hipotesis{color:var(--dorado);border-color:rgba(200,169,107,.42);background:rgba(200,169,107,.1)}
+.chip.observacion{color:#C6D2DA;border-color:rgba(198,210,218,.34);background:rgba(47,58,61,.5)}
+.chip.especulacion{color:var(--texto-tenue);border-color:var(--linea);background:transparent;border-style:dashed}
+.aviso{max-width:var(--medida);font-size:.95rem;color:var(--texto-tenue);
+  border-left:1px solid var(--linea);padding-left:1.2rem;margin:1.5rem 0}
+
+/* formación */
+.formacion{list-style:none;padding:0;margin:0;max-width:var(--medida)}
+.formacion li{padding:.85rem 0;border-bottom:1px solid var(--linea);display:flex;gap:1rem;
+  align-items:baseline;justify-content:space-between;font-size:.98rem}
+.formacion li:last-child{border-bottom:0}
+.formacion .anio{color:var(--dorado);font-size:.8rem;letter-spacing:.08em;flex:none}
+
+/* contrato */
+.contrato{background:var(--noche-900);border-radius:var(--r);padding:2.2rem;border:1px solid var(--linea)}
+.contrato h2{margin-top:0}
+.leyenda{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.6rem}
+
+/* llamada */
+.llamada{background:var(--verde);border-radius:var(--r);padding:2.4rem;margin:3.4rem 0}
+.llamada h2{margin-bottom:.9rem}
+.llamada p{color:rgba(246,241,232,.82)}
+.boton{display:inline-block;margin-top:1.2rem;background:var(--dorado);color:var(--noche-900);
+  text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.03em;
+  padding:.8rem 1.6rem;border-radius:100px;transition:transform .25s var(--ease),filter .25s var(--ease)}
+.boton:hover{transform:translateY(-2px);filter:brightness(1.06)}
+
+/* pie */
+.pie{border-top:1px solid var(--linea);padding:2.6rem 0;color:var(--texto-tenue);font-size:.85rem}
+.pie .envoltura{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:space-between;align-items:center}
+.pie a{color:var(--texto-suave);text-decoration:none}
+.pie a:hover{color:var(--dorado)}
+
+@media (max-width:700px){
+  .menu{display:none}
+  .portada{padding-top:3.5rem}
+  .llamada,.contrato{padding:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* --- específico de la página de investigación --- */
+.anatomia{list-style:none;padding:0;margin:2.2rem 0 0}
+.anatomia li{display:grid;grid-template-columns:2.1rem 1fr;gap:1rem;
+  padding:1.15rem 0;border-bottom:1px solid var(--linea);align-items:start}
+.anatomia li:last-child{border-bottom:0}
+.anatomia .n{font-family:var(--serif);color:var(--dorado);font-size:1.05rem;line-height:1.5}
+.anatomia .afirm{font-family:var(--serif);font-size:1.12rem;line-height:1.45;margin:0 0 .5rem}
+.anatomia .glosa{margin:0;font-size:.95rem;color:var(--texto-tenue);max-width:52ch}
+.anatomia .chip{margin-left:.15rem}
+.rival{border:1px solid var(--linea);border-radius:var(--r);padding:1.8rem;
+  background:rgba(47,58,61,.34);margin:2.2rem 0;max-width:var(--medida)}
+.rival h3{margin:0 0 .7rem;font-size:1.05rem}
+.rival p{margin:0;font-size:.96rem;color:var(--texto-suave)}
+.refs{list-style:none;padding:0;margin:1.8rem 0 0;counter-reset:r}
+.refs li{counter-increment:r;position:relative;padding:.55rem 0 .55rem 2.4rem;
+  font-size:.88rem;color:var(--texto-tenue);border-bottom:1px solid rgba(246,241,232,.07)}
+.refs li::before{content:counter(r);position:absolute;left:0;top:.55rem;
+  font-family:var(--serif);color:var(--dorado);font-size:.8rem}
+.refs a{color:var(--texto-suave);text-decoration:none;border-bottom:1px solid var(--linea)}
+.refs a:hover{color:var(--dorado);border-bottom-color:var(--dorado)}
+.enunciado{
+  margin:0;padding-left:1.7rem;border-left:2px solid var(--dorado);
+  max-width:38rem;font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.24rem,2.1vw,1.62rem);line-height:1.48;color:var(--marfil);
+}
+h1.epigrafe{font-family:var(--sans);font-weight:600;max-width:none;line-height:1.4;margin:0 0 1.5rem}
+.sintesis{border-left:2px solid var(--dorado);padding-left:1.6rem;margin:2.6rem 0;
+  max-width:var(--medida);font-family:var(--serif);font-size:1.12rem;line-height:1.6}
+</style>
+<link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<g id="isotipo-min" fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path opacity=".55" d="M100.0 64.0C103.1 64.0 106.3 64.4 109.3 65.2C112.3 66.0 115.3 67.3 118.0 68.8C120.7 70.4 123.3 72.3 125.5 74.5C127.7 76.7 129.6 79.3 131.2 82.0C132.7 84.7 134.0 87.7 134.8 90.7C135.6 93.7 136.0 96.9 136.0 100.0C136.0 103.1 135.6 106.3 134.8 109.3C134.0 112.3 132.7 115.3 131.2 118.0C129.6 120.7 127.7 123.3 125.5 125.5C123.3 127.7 120.7 129.6 118.0 131.2C115.3 132.7 112.3 134.0 109.3 134.8C106.3 135.6 103.1 136.0 100.0 136.0C96.9 136.0 93.7 135.6 90.7 134.8C87.7 134.0 84.7 132.7 82.0 131.2C79.3 129.6 76.7 127.7 74.5 125.5C72.3 123.3 70.4 120.7 68.8 118.0C67.3 115.3 66.0 112.3 65.2 109.3C64.4 106.3 64.0 103.1 64.0 100.0C64.0 96.9 64.4 93.7 65.2 90.7C66.0 87.7 67.3 84.7 68.8 82.0C70.4 79.3 72.3 76.7 74.5 74.5C76.7 72.3 79.3 70.4 82.0 68.8C84.7 67.3 87.7 66.0 90.7 65.2C93.7 64.4 96.9 64.0 100.0 64.0Z"/>
+      <path opacity=".78" d="M100.0 42.0C104.8 42.0 109.8 44.8 114.3 46.6C118.9 48.4 123.1 50.4 127.3 52.8C131.4 55.2 135.3 57.9 139.1 60.9C142.9 63.9 147.8 66.9 150.2 71.0C152.6 75.1 152.7 80.9 153.4 85.7C154.1 90.5 154.5 95.2 154.5 100.0C154.5 104.8 154.1 109.5 153.4 114.3C152.7 119.1 152.6 124.9 150.2 129.0C147.8 133.1 142.9 136.1 139.1 139.1C135.3 142.1 131.4 144.8 127.3 147.2C123.1 149.6 118.9 151.6 114.3 153.4C109.8 155.2 104.8 158.0 100.0 158.0C95.2 158.0 90.2 155.2 85.7 153.4C81.1 151.6 76.9 149.6 72.7 147.2C68.6 144.8 64.7 142.1 60.9 139.1C57.1 136.1 52.2 133.1 49.8 129.0C47.4 124.9 47.3 119.1 46.6 114.3C45.9 109.5 45.5 104.8 45.5 100.0C45.5 95.2 45.9 90.5 46.6 85.7C47.3 80.9 47.4 75.1 49.8 71.0C52.2 66.9 57.1 63.9 60.9 60.9C64.7 57.9 68.6 55.2 72.7 52.8C76.9 50.4 81.1 48.4 85.7 46.6C90.2 44.8 95.2 42.0 100.0 42.0Z"/>
+      <path opacity="1" d="M100.0 20.0C106.3 20.0 112.9 26.7 118.8 29.9C124.6 33.1 129.8 35.9 135.2 39.1C140.6 42.2 145.6 45.2 151.3 48.7C157.0 52.2 166.2 54.6 169.3 60.0C172.4 65.4 169.9 74.6 170.1 81.2C170.3 87.9 170.4 93.7 170.4 100.0C170.4 106.3 170.3 112.1 170.1 118.8C169.9 125.4 172.4 134.6 169.3 140.0C166.2 145.4 157.0 147.8 151.3 151.3C145.6 154.8 140.6 157.8 135.2 160.9C129.8 164.1 124.6 166.9 118.8 170.1C112.9 173.3 106.3 180.0 100.0 180.0C93.7 180.0 87.1 173.3 81.2 170.1C75.4 166.9 70.2 164.1 64.8 160.9C59.4 157.8 54.4 154.8 48.7 151.3C43.0 147.8 33.8 145.4 30.7 140.0C27.6 134.6 30.1 125.4 29.9 118.8C29.7 112.1 29.6 106.3 29.6 100.0C29.6 93.7 29.7 87.9 29.9 81.2C30.1 74.6 27.6 65.4 30.7 60.0C33.8 54.6 43.0 52.2 48.7 48.7C54.4 45.2 59.4 42.2 64.8 39.1C70.2 35.9 75.4 33.1 81.2 29.9C87.1 26.7 93.7 20.0 100.0 20.0Z"/>
+      <circle fill="#C8A96B" stroke="none" cx="100" cy="100" r="21"/>
+    </g>
+</defs></svg>
+<div data-cabecera><header class="cabecera"><div class="cabecera__int"><a class="marca" href="/" aria-label="La filosofía del bostezo — inicio"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true"><use href="#isotipo-min"/></svg><span class="marca-txt">La filosofía del<span>bostezo</span></span></a><nav aria-label="Principal"><ul class="menu"><li><a href="/investigacion">La investigación</a></li><li><a href="/#ensayos">Ensayos</a></li><li><a href="/autor">Quién escribe</a></li><li><a href="/#suscribir">Suscribirse</a></li></ul></nav><a class="cta" href="/#suscribir"><span class="largo">Recibir los&nbsp;ensayos</span><span class="corto">Suscribirse</span></a></div></header></div>
+
+<main id="principal">
+  <div class="envoltura">
+
+    <section class="portada">
+      <h1 class="epigrafe">La investigación</h1>
+      <blockquote class="enunciado">«El bostezo es el mecanismo endógeno a través del cual todos
+      los vertebrados armonizan sus tensiones —mentales, fisiológicas, mecánicas— de manera
+      transversal. El estudio de este mecanismo nos enseña cómo abordar el proceso vital de un
+      individuo.»</blockquote>
+    </section>
+
+    <section>
+      <p>Una frase así se puede decir en diez segundos y tardar años en probarse. Contiene siete
+      afirmaciones distintas, y su fuerza depende de no fundirlas: unas están ganadas, otras penden
+      de un experimento que todavía no se ha hecho.</p>
+    </section>
+
+    <section>
+      <h2>La frase, abierta en siete</h2>
+      <ul class="anatomia">
+      <li>
+        <span class="n">1</span>
+        <div>
+          <p class="afirm">Es un <strong>mecanismo</strong> <span class="chip hecho">Hecho</span></p>
+          <p class="glosa">Un acto motor coordinado de cuerpo entero, no un reflejo de la mandíbula. Se registró en un solo bostezo: respiración, apertura mandibular, estiramiento axial, cambio cortical y respuesta autonómica.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">2</span>
+        <div>
+          <p class="afirm">Es <strong>endógeno</strong> <span class="chip hecho">Hecho</span></p>
+          <p class="glosa">El organismo lleva el perturbador dentro y lo dispara varias veces al día. Nadie lo enseña, y el feto ya lo hace en la semana doce.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">3</span>
+        <div>
+          <p class="afirm">En <strong>todos los vertebrados</strong> <span class="chip hecho">Hecho</span></p>
+          <p class="glosa">De peces a mamíferos, pasando por reptiles. Un núcleo motor conservado sobre el que la evolución fue envolviendo capas de control.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">4</span>
+        <div>
+          <p class="afirm"><strong>Armoniza</strong> <span class="chip hipotesis">Hipótesis</span></p>
+          <p class="glosa">Aquí está el salto. Que el bostezo <em>opere</em> la transición y no solo la delate es la apuesta del programa — y no está demostrada.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">5</span>
+        <div>
+          <p class="afirm">Tensiones <strong>mentales, fisiológicas y mecánicas</strong> <span class="chip observacion">Mixto</span></p>
+          <p class="glosa">Que las toca las tres está documentado. Que las tres sean la misma magnitud no lo está: hay que decir en cada dominio qué se mide exactamente.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">6</span>
+        <div>
+          <p class="afirm">De manera <strong>transversal</strong> <span class="chip hipotesis">Hipótesis</span></p>
+          <p class="glosa">Son tres afirmaciones distintas: entre sistemas, entre escalas y entre organismos. Cada una tiene su experimento; conviene no fundirlas.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">7</span>
+        <div>
+          <p class="afirm">Enseña a <strong>abordar el proceso vital</strong> <span class="chip hipotesis">Consecuencia</span></p>
+          <p class="glosa">Si lo anterior se sostiene, se sigue una manera distinta de mirar a un ser vivo: por sus transiciones, como red, y desde su ontogenia.</p>
+        </div>
+      </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Lo que ya está ganado</h2>
+      <p>Que el bostezo es un <strong>mecanismo</strong> es, de todo el edificio, lo mejor demostrado.
+      En un solo acto de unos seis segundos se mueven a la vez la respiración, la mandíbula, el eje
+      del cuerpo, el estado de la corteza y hasta el líquido cefalorraquídeo. Cuando el sistema
+      nervioso se daña, el bostezo se altera <em>como conjunto</em> — que es la prueba de que era un
+      sistema y no un gesto local.</p>
+      <p>Que es <strong>endógeno</strong> tiene una consecuencia metodológica que casi nadie ha
+      aprovechado. La fisiología experimental necesita a alguien que perturbe el sistema desde fuera:
+      una férula, un fármaco, una anestesia. Aquí no hace falta. El organismo lleva el perturbador
+      dentro, es siempre el mismo y pasa por la misma vía anatómica, varias veces al día y gratis.</p>
+      <p>Y que ocurre en <strong>todos los vertebrados</strong> está documentado de los peces a los
+      mamíferos, con los reptiles por medio. Pero conviene leerlo bien: no es que los animales
+      «superiores» bostecen mejor. Es un núcleo motor antiguo sobre el que cada linaje fue envolviendo
+      capas de control — autonómica, hipotalámica, cortical y, donde hay vida social, contagiosa.</p>
+    </section>
+
+    <section>
+      <h2>El caso más nítido: el embrión</h2>
+      <p>Si hay un lugar donde esta idea se vuelve difícil de esquivar, es el útero. El bostezo
+      aparece en el feto hacia el final del primer trimestre, y se distingue de una simple apertura
+      de la boca por la lentitud característica con que llega a su máxima extensión. Ocurre sin
+      estímulo externo que lo provoque y antes de que exista corteza capaz de gobernarlo.</p>
+      <p class="suelta">El gesto precede al sujeto.</p>
+      <p>Eso invierte el orden habitual de las explicaciones. No es que primero haya alguien y luego
+      ese alguien bostece: el bostezo es uno de los actos por los que el organismo llega a
+      constituirse. Un cuerpo que, al estirarse, se organiza a sí mismo. <span class="chip hipotesis">Hipótesis</span></p>
+      <p>Conviene ser preciso con el alcance de la afirmación, porque la imagen es potente y presta
+      a malentendidos. Que el embrión que bosteza se esté calibrando <strong>no</strong> significa que
+      sienta, perciba o sea consciente. La revisión de la conducta fetal con ecografía es explícita:
+      la creciente complejidad de estos gestos refleja integración neural, y ningún estudio ofrece
+      evidencia de experiencia consciente. La tesis aquí es deliberadamente más modesta: procesamiento
+      en el sentido de organización activa, no de vivencia.</p>
+      <p class="aviso">Que la frecuencia del bostezo acompañe a la maduración cerebral es una
+      correlación robusta, no una prueba de que la cause. Ahí sigue habiendo un experimento pendiente.</p>
+    </section>
+
+    <section>
+      <h2>La palabra que aún no está ganada</h2>
+      <p><strong>«Armonizan».</strong> Ahí es donde la frase dice más de lo que la evidencia
+      demuestra, y prefiero decirlo yo antes de que lo diga otro.</p>
+      <p>El bostezo no aparece cuando el organismo está estable: aparece en las <em>transiciones</em>
+      — de dormido a despierto, de calma a alerta. Eso lo convierte en algo más preciso que un
+      regulador: sería un <strong>operador de transición</strong>, un pulso que el sistema dispara
+      cerca del umbral entre dos regímenes para cruzarlo de forma coordinada.</p>
+      <p>Sería. La objeción fuerte es que el bostezo solo <em>delate</em> una transición decidida más
+      arriba, en lugar de ejecutarla: señal, no operador. La forma de decidirlo es impedir
+      mecánicamente el acto sin tocar su comando central y mirar si algo se degrada. Ese experimento
+      está diseñado y no ejecutado. Mientras no se haga, la frase honesta es que el bostezo
+      <em>acompaña y presumiblemente ejecuta</em> la armonización.</p>
+      <div class="rival">
+        <h3>La explicación rival, en su mejor versión</h3>
+        <p>Hoy existe una hipótesis mejor respaldada que la mía: que el bostezo enfría el cerebro.
+        Tiene experimentos a favor y un dato incómodo para cualquier teoría alternativa — entre
+        especies, la duración del bostezo escala con la masa cerebral. Cualquier diseño serio debe
+        incluir la temperatura como covariable, y el experimento de bloqueo es también lo que
+        distinguiría entre ambas.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Qué enseñaría, si resulta cierto</h2>
+      <p><strong>Mirar por las transiciones, no por los estados.</strong> Un sistema vivo enseña su
+      organización en los umbrales, no en el reposo. El proceso vital se lee mejor en las costuras
+      que en las telas.</p>
+      <p><strong>Mirar al individuo como red.</strong> El bostezo es una prueba de carga natural y no
+      invasiva: un solo acto que solicita a la vez respiración, postura, tono, alerta y fluidos. Su
+      coherencia —o su incoherencia— delata el estado del acoplamiento entero.</p>
+      <p><strong>Mirar la ontogenia.</strong> Si la lectura es correcta, el bostezo no solo mantiene
+      la coherencia del organismo: ayudó a construir la arquitectura que la sostiene. El constructor
+      y el regulador serían el mismo.</p>
+      <p>Y detrás de todo esto hay una pregunta mayor, que es el horizonte del trabajo y no su
+      cuerpo: cómo lo vivo mantiene su forma frente a la entropía, desde la célula embrionaria que
+      construye la interfaz del sentir hasta el vínculo que regula a dos organismos como si fueran
+      uno. El bostezo es la entrada concreta a ese problema — la más medible que he encontrado.</p>
+      <p><a href="/investigacion/desarrollo" style="color:var(--dorado)">El desarrollo completo,
+      punto por punto</a> — con la evidencia de cada afirmación, su nivel de confianza y lo que la
+      refutaría — está publicado aparte, para quien quiera entrar en el detalle.</p>
+      <p class="aviso">Cada afirmación de esta página lleva su etiqueta. Lo que está probado se
+      presenta como probado; lo que es mío y aún no está demostrado, también. El desarrollo completo,
+      con su evidencia punto por punto, forma parte de la investigación en curso.</p>
+    </section>
+
+    <div class="llamada">
+      <h2>Los ensayos salen de aquí</h2>
+      <p>Cada texto desarrolla una pieza de esto sin prisa y sin resumen. Se publican en Substack
+      y llegan por correo a quien los haya pedido.</p>
+      <a class="boton" href="/#suscribir">Recibir los ensayos</a>
+    </div>
+
+    <section>
+      <h2>Referencias</h2>
+      <p style="font-size:.95rem;color:var(--texto-tenue)">Todo lo afirmado arriba como hecho se apoya
+      en literatura publicada. Cada entrada enlaza a su artículo original.</p>
+      <ol class="refs">
+      <li>Sato-Suzuki I, Kita I, Oguri M, Arita H. <em>J Neurophysiol</em>. 1998;80(5):2765-2775. <a href="https://doi.org/10.1152/jn.1998.80.5.2765" target="_blank" rel="noopener">doi:10.1152/jn.1998.80.5.2765</a></li>
+      <li>Provine RR. <em>Ethology</em>. 1986;72(2):109-122. <a href="https://doi.org/10.1111/j.1439-0310.1986.tb00611.x" target="_blank" rel="noopener">doi:10.1111/j.1439-0310.1986.tb00611.x</a></li>
+      <li>Corey TP, Shoup-Knox ML, Gordis EB, Gallup GG. <em>Front Evol Neurosci</em>. 2012;3:7. <a href="https://doi.org/10.3389/fnevo.2011.00007" target="_blank" rel="noopener">doi:10.3389/fnevo.2011.00007</a></li>
+      <li>Martinac AD, Waters S, Lloyd R, Bilston LE. <em>Respir Physiol Neurobiol</em>. 2026;343:104575. <a href="https://doi.org/10.1016/j.resp.2026.104575" target="_blank" rel="noopener">doi:10.1016/j.resp.2026.104575</a></li>
+      <li>Ertekin C, et al. <em>Mult Scler Relat Disord</em>. 2017;17:179-183. <a href="https://doi.org/10.1016/j.msard.2017.06.012" target="_blank" rel="noopener">doi:10.1016/j.msard.2017.06.012</a></li>
+      <li>Ertekin C, et al. <em>Exp Brain Res</em>. 2015;233(7):2073-2080. <a href="https://doi.org/10.1007/s00221-015-4278-9" target="_blank" rel="noopener">doi:10.1007/s00221-015-4278-9</a></li>
+      <li>Walusinski O. <em>Front Neurol Neurosci</em>. 2010;28:32-41. <a href="https://doi.org/10.1159/000307075" target="_blank" rel="noopener">doi:10.1159/000307075</a></li>
+      <li>Menin D, et al. <em>PLoS One</em>. 2019;14(12):e0226921. <a href="https://doi.org/10.1371/journal.pone.0226921" target="_blank" rel="noopener">doi:10.1371/journal.pone.0226921</a></li>
+      <li>D'Adamo G, et al. <em>Curr Biol</em>. 2026;36(10). <a href="https://doi.org/10.1016/j.cub.2026.04.025" target="_blank" rel="noopener">doi:10.1016/j.cub.2026.04.025</a></li>
+      <li>Casetta G, Cordoni G, Palagi E. <em>Behav Ecol Sociobiol</em>. 2022. <a href="https://doi.org/10.1007/s00265-022-03261-y" target="_blank" rel="noopener">doi:10.1007/s00265-022-03261-y</a></li>
+      <li>Bertolucci LF. <em>J Bodyw Mov Ther</em>. 2011;15(3):268-280. <a href="https://doi.org/10.1016/j.jbmt.2010.12.006" target="_blank" rel="noopener">doi:10.1016/j.jbmt.2010.12.006</a></li>
+      <li>Özgüç Ö, et al. <em>PLoS Biol</em>. 2022;20(3):e3001593. <a href="https://doi.org/10.1371/journal.pbio.3001593" target="_blank" rel="noopener">doi:10.1371/journal.pbio.3001593</a></li>
+      <li>Gallup AC, Gallup GG. <em>Physiol Behav</em>. 2008;95(1-2):10-16. <a href="https://doi.org/10.1016/j.physbeh.2008.05.003" target="_blank" rel="noopener">doi:10.1016/j.physbeh.2008.05.003</a></li>
+      <li>Massen JJM, Gallup AC. <em>Neurosci Biobehav Rev</em>. 2017;80:573-585. <a href="https://doi.org/10.1016/j.neubiorev.2017.07.006" target="_blank" rel="noopener">doi:10.1016/j.neubiorev.2017.07.006</a></li>
+      <li>Guggisberg AG, et al. <em>Neurosci Biobehav Rev</em>. 2010. <a href="https://doi.org/10.1016/j.neubiorev.2010.03.008" target="_blank" rel="noopener">doi:10.1016/j.neubiorev.2010.03.008</a></li>
+      <li>Walusinski O. <em>Med Hypotheses</em>. 2006;67(1):6-14. <a href="https://doi.org/10.1016/j.mehy.2006.01.020" target="_blank" rel="noopener">doi:10.1016/j.mehy.2006.01.020</a></li>
+      <li>Doelman CJ, Rijken JA. <em>Sleep Breath</em>. 2022;26(4):1561-1572. <a href="https://doi.org/10.1007/s11325-022-02565-7" target="_blank" rel="noopener">doi:10.1007/s11325-022-02565-7</a></li>
+      <li>Zafar H, Nordh E, Eriksson PO. <em>Arch Oral Biol</em>. 2000;45(8):675-682. <a href="https://doi.org/10.1016/s0003-9969(00)00032-7" target="_blank" rel="noopener">doi:10.1016/s0003-9969(00)00032-7</a></li>
+      <li>Meenakshisundaram R, et al. <em>Front Neurol Neurosci</em>. 2010;28:134-139. <a href="https://doi.org/10.1159/000307095" target="_blank" rel="noopener">doi:10.1159/000307095</a></li>
+      <li>Palagi E, Guillén-Salazar F, Llamazares-Martín C. <em>Sci Rep</em>. 2019;9:17226. <a href="https://doi.org/10.1038/s41598-019-53613-4" target="_blank" rel="noopener">doi:10.1038/s41598-019-53613-4</a></li>
+      <li>Ivanov PCh. <em>Front Netw Physiol</em>. 2021;1:711778. <a href="https://doi.org/10.3389/fnetp.2021.711778" target="_blank" rel="noopener">doi:10.3389/fnetp.2021.711778</a></li>
+      <li>Peterka RJ. <em>J Neurophysiol</em>. 2002;88(3):1097-1118. <a href="https://doi.org/10.1152/jn.2002.88.3.1097" target="_blank" rel="noopener">doi:10.1152/jn.2002.88.3.1097</a></li>
+      <li>Woo SH, et al. <em>Nat Neurosci</em>. 2015;18(10):1756-1762. <a href="https://doi.org/10.1038/nn.4162" target="_blank" rel="noopener">doi:10.1038/nn.4162</a></li>
+      <li>Meng X, et al. bioRxiv 2026 <em>(preprint)</em>. <a href="https://doi.org/10.64898/2026.04.26.720882" target="_blank" rel="noopener">doi:10.64898/2026.04.26.720882</a></li>
+      </ol>
+    </section>
+
+  </div>
+</main>
+
+<div data-pie><footer class="pie"><div class="pie__int"><span>© 2026 Ian de Pablo Ruf · Andorra</span><span class="pie__enlaces"><a href="/investigacion">La investigación</a><a href="/autor">Quién escribe</a><a href="https://lafilosofiadelbostezo.substack.com" rel="me" target="_blank">Substack</a></span><span class="pie__paleta" title="Paleta oficial"><i style="background:#F6F1E8"></i><i style="background:#3F5A4B"></i><i style="background:#1E2A44"></i><i style="background:#2F3A3D"></i><i style="background:#C8A96B"></i></span></div></footer></div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
