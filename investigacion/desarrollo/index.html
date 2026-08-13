@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El enunciado, punto por punto · La filosofía del bostezo</title>
+<meta name="description" content="Desarrollo completo de las siete afirmaciones que componen la tesis del bostezo como mecanismo endógeno de armonización transversal, con el estatuto epistémico de cada una y 24 referencias.">
+<link rel="canonical" href="https://filosofiadelbostezo.com/investigacion/desarrollo">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="El enunciado, punto por punto">
+<meta property="og:description" content="Las siete afirmaciones de la tesis, cada una con su estatuto: qué es hecho, qué es inferencia y qué falta por demostrar.">
+<meta property="og:url" content="https://filosofiadelbostezo.com/investigacion/desarrollo">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;600&display=swap">
+<style>
+:root{
+  --noche:#1E2A44; --noche-900:#162034; --noche-700:#243354;
+  --marfil:#F6F1E8; --verde:#3F5A4B; --pizarra:#2F3A3D; --dorado:#C8A96B;
+  --texto:#F6F1E8; --texto-suave:rgba(246,241,232,.72); --texto-tenue:rgba(246,241,232,.52);
+  --linea:rgba(246,241,232,.14);
+  --serif:'Lora','Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --sans:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --ancho:1180px; --r:14px; --ease:cubic-bezier(.22,.61,.36,1);
+  --medida:34rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--noche);color:var(--texto);font-family:var(--sans);
+     font-weight:300;font-size:1.0625rem;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.saltar{position:absolute;left:-9999px}
+.saltar:focus{left:1rem;top:1rem;z-index:99;background:var(--dorado);color:var(--noche-900);padding:.6rem 1rem;border-radius:6px}
+:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+
+.envoltura{max-width:var(--ancho);margin:0 auto;padding:0 1.5rem}
+
+/* cabecera */
+.cabecera{border-bottom:1px solid var(--linea);position:sticky;top:0;z-index:20;
+  background:rgba(30,42,68,.86);backdrop-filter:blur(10px)}
+.cabecera .envoltura{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--serif);font-size:.95rem;letter-spacing:.01em}
+.iso{width:26px;height:26px;color:var(--dorado);flex:none}
+.menu{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-size:.86rem;letter-spacing:.04em}
+.menu a{text-decoration:none;color:var(--texto-suave);transition:color .25s var(--ease)}
+.menu a:hover,.menu a[aria-current]{color:var(--dorado)}
+
+/* portada */
+.portada{padding:5.5rem 0 3rem;border-bottom:1px solid var(--linea)}
+.epigrafe{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado);margin:0 0 1.4rem}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.12;
+   margin:0 0 1.6rem;max-width:19ch;letter-spacing:-.015em}
+.entradilla{font-size:1.2rem;color:var(--texto-suave);max-width:var(--medida);margin:0}
+
+/* cuerpo */
+main section{padding:3.4rem 0;border-bottom:1px solid var(--linea)}
+main section:last-of-type{border-bottom:0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,2.9vw,1.9rem);
+   line-height:1.25;margin:0 0 1.5rem;max-width:24ch;letter-spacing:-.01em}
+p{max-width:var(--medida);margin:0 0 1.25rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:600;color:var(--marfil)}
+em{font-style:italic}
+.suelta{font-family:var(--serif);font-size:1.5rem;line-height:1.4;color:var(--marfil);
+  max-width:22ch;margin:2rem 0;padding-left:1.4rem;border-left:2px solid var(--dorado)}
+
+/* SIGNATURE: etiquetas de confianza */
+.chip{display:inline-flex;align-items:center;gap:.42rem;font-family:var(--sans);
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:.24rem .62rem;border-radius:100px;border:1px solid;white-space:nowrap;
+  vertical-align:middle;translate:0 -1px}
+.chip::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.chip.hecho{color:#9CC5A8;border-color:rgba(156,197,168,.42);background:rgba(63,90,75,.3)}
+.chip.hipotesis{color:var(--dorado);border-color:rgba(200,169,107,.42);background:rgba(200,169,107,.1)}
+.chip.observacion{color:#C6D2DA;border-color:rgba(198,210,218,.34);background:rgba(47,58,61,.5)}
+.chip.especulacion{color:var(--texto-tenue);border-color:var(--linea);background:transparent;border-style:dashed}
+.aviso{max-width:var(--medida);font-size:.95rem;color:var(--texto-tenue);
+  border-left:1px solid var(--linea);padding-left:1.2rem;margin:1.5rem 0}
+
+/* formación */
+.formacion{list-style:none;padding:0;margin:0;max-width:var(--medida)}
+.formacion li{padding:.85rem 0;border-bottom:1px solid var(--linea);display:flex;gap:1rem;
+  align-items:baseline;justify-content:space-between;font-size:.98rem}
+.formacion li:last-child{border-bottom:0}
+.formacion .anio{color:var(--dorado);font-size:.8rem;letter-spacing:.08em;flex:none}
+
+/* contrato */
+.contrato{background:var(--noche-900);border-radius:var(--r);padding:2.2rem;border:1px solid var(--linea)}
+.contrato h2{margin-top:0}
+.leyenda{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.6rem}
+
+/* llamada */
+.llamada{background:var(--verde);border-radius:var(--r);padding:2.4rem;margin:3.4rem 0}
+.llamada h2{margin-bottom:.9rem}
+.llamada p{color:rgba(246,241,232,.82)}
+.boton{display:inline-block;margin-top:1.2rem;background:var(--dorado);color:var(--noche-900);
+  text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.03em;
+  padding:.8rem 1.6rem;border-radius:100px;transition:transform .25s var(--ease),filter .25s var(--ease)}
+.boton:hover{transform:translateY(-2px);filter:brightness(1.06)}
+
+/* pie */
+.pie{border-top:1px solid var(--linea);padding:2.6rem 0;color:var(--texto-tenue);font-size:.85rem}
+.pie .envoltura{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:space-between;align-items:center}
+.pie a{color:var(--texto-suave);text-decoration:none}
+.pie a:hover{color:var(--dorado)}
+
+@media (max-width:700px){
+  .menu{display:none}
+  .portada{padding-top:3.5rem}
+  .llamada,.contrato{padding:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* --- desarrollo completo --- */
+.doc h2{margin-top:3.2rem}
+.doc h2:first-child{margin-top:0}
+.doc p{max-width:var(--medida)}
+.doc blockquote{margin:2rem 0;padding-left:1.5rem;border-left:2px solid var(--dorado);
+  max-width:var(--medida);font-family:var(--serif);font-size:1.16rem;line-height:1.55;color:var(--marfil)}
+.doc blockquote p{margin:0}
+.doc table{width:100%;border-collapse:collapse;margin:2rem 0;font-size:.9rem;display:block;overflow-x:auto}
+.doc th{text-align:left;font-family:var(--sans);font-weight:600;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--dorado);
+  padding:.7rem .9rem;border-bottom:1px solid var(--linea);white-space:nowrap}
+.doc td{padding:.8rem .9rem;border-bottom:1px solid rgba(246,241,232,.07);
+  color:var(--texto-suave);vertical-align:top}
+.doc tr:last-child td{border-bottom:0}
+.doc ol,.doc ul{max-width:var(--medida);padding-left:1.4rem;color:var(--texto-suave)}
+.doc ol li,.doc ul li{margin-bottom:.5rem}
+.doc h2 + p strong:first-child{color:var(--marfil)}
+.doc a[href^="https://doi.org"]{color:var(--texto-tenue);font-size:.85em;
+  text-decoration:none;border-bottom:1px solid var(--linea)}
+.doc a[href^="https://doi.org"]:hover{color:var(--dorado);border-bottom-color:var(--dorado)}
+.volver{display:inline-block;margin-bottom:2rem;font-size:.9rem;color:var(--texto-tenue);text-decoration:none}
+.volver:hover{color:var(--dorado)}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;font-size:.82rem;color:var(--texto-tenue);
+  margin:1.6rem 0 0;padding-top:1.2rem;border-top:1px solid var(--linea)}
+</style>
+<link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<g id="isotipo-min" fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path opacity=".55" d="M100.0 64.0C103.1 64.0 106.3 64.4 109.3 65.2C112.3 66.0 115.3 67.3 118.0 68.8C120.7 70.4 123.3 72.3 125.5 74.5C127.7 76.7 129.6 79.3 131.2 82.0C132.7 84.7 134.0 87.7 134.8 90.7C135.6 93.7 136.0 96.9 136.0 100.0C136.0 103.1 135.6 106.3 134.8 109.3C134.0 112.3 132.7 115.3 131.2 118.0C129.6 120.7 127.7 123.3 125.5 125.5C123.3 127.7 120.7 129.6 118.0 131.2C115.3 132.7 112.3 134.0 109.3 134.8C106.3 135.6 103.1 136.0 100.0 136.0C96.9 136.0 93.7 135.6 90.7 134.8C87.7 134.0 84.7 132.7 82.0 131.2C79.3 129.6 76.7 127.7 74.5 125.5C72.3 123.3 70.4 120.7 68.8 118.0C67.3 115.3 66.0 112.3 65.2 109.3C64.4 106.3 64.0 103.1 64.0 100.0C64.0 96.9 64.4 93.7 65.2 90.7C66.0 87.7 67.3 84.7 68.8 82.0C70.4 79.3 72.3 76.7 74.5 74.5C76.7 72.3 79.3 70.4 82.0 68.8C84.7 67.3 87.7 66.0 90.7 65.2C93.7 64.4 96.9 64.0 100.0 64.0Z"/>
+      <path opacity=".78" d="M100.0 42.0C104.8 42.0 109.8 44.8 114.3 46.6C118.9 48.4 123.1 50.4 127.3 52.8C131.4 55.2 135.3 57.9 139.1 60.9C142.9 63.9 147.8 66.9 150.2 71.0C152.6 75.1 152.7 80.9 153.4 85.7C154.1 90.5 154.5 95.2 154.5 100.0C154.5 104.8 154.1 109.5 153.4 114.3C152.7 119.1 152.6 124.9 150.2 129.0C147.8 133.1 142.9 136.1 139.1 139.1C135.3 142.1 131.4 144.8 127.3 147.2C123.1 149.6 118.9 151.6 114.3 153.4C109.8 155.2 104.8 158.0 100.0 158.0C95.2 158.0 90.2 155.2 85.7 153.4C81.1 151.6 76.9 149.6 72.7 147.2C68.6 144.8 64.7 142.1 60.9 139.1C57.1 136.1 52.2 133.1 49.8 129.0C47.4 124.9 47.3 119.1 46.6 114.3C45.9 109.5 45.5 104.8 45.5 100.0C45.5 95.2 45.9 90.5 46.6 85.7C47.3 80.9 47.4 75.1 49.8 71.0C52.2 66.9 57.1 63.9 60.9 60.9C64.7 57.9 68.6 55.2 72.7 52.8C76.9 50.4 81.1 48.4 85.7 46.6C90.2 44.8 95.2 42.0 100.0 42.0Z"/>
+      <path opacity="1" d="M100.0 20.0C106.3 20.0 112.9 26.7 118.8 29.9C124.6 33.1 129.8 35.9 135.2 39.1C140.6 42.2 145.6 45.2 151.3 48.7C157.0 52.2 166.2 54.6 169.3 60.0C172.4 65.4 169.9 74.6 170.1 81.2C170.3 87.9 170.4 93.7 170.4 100.0C170.4 106.3 170.3 112.1 170.1 118.8C169.9 125.4 172.4 134.6 169.3 140.0C166.2 145.4 157.0 147.8 151.3 151.3C145.6 154.8 140.6 157.8 135.2 160.9C129.8 164.1 124.6 166.9 118.8 170.1C112.9 173.3 106.3 180.0 100.0 180.0C93.7 180.0 87.1 173.3 81.2 170.1C75.4 166.9 70.2 164.1 64.8 160.9C59.4 157.8 54.4 154.8 48.7 151.3C43.0 147.8 33.8 145.4 30.7 140.0C27.6 134.6 30.1 125.4 29.9 118.8C29.7 112.1 29.6 106.3 29.6 100.0C29.6 93.7 29.7 87.9 29.9 81.2C30.1 74.6 27.6 65.4 30.7 60.0C33.8 54.6 43.0 52.2 48.7 48.7C54.4 45.2 59.4 42.2 64.8 39.1C70.2 35.9 75.4 33.1 81.2 29.9C87.1 26.7 93.7 20.0 100.0 20.0Z"/>
+      <circle fill="#C8A96B" stroke="none" cx="100" cy="100" r="21"/>
+    </g>
+</defs></svg>
+<div data-cabecera><header class="cabecera"><div class="cabecera__int"><a class="marca" href="/" aria-label="La filosofía del bostezo — inicio"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true"><use href="#isotipo-min"/></svg><span class="marca-txt">La filosofía del<span>bostezo</span></span></a><nav aria-label="Principal"><ul class="menu"><li><a href="/investigacion">La investigación</a></li><li><a href="/#ensayos">Ensayos</a></li><li><a href="/autor">Quién escribe</a></li><li><a href="/#suscribir">Suscribirse</a></li></ul></nav><a class="cta" href="/#suscribir"><span class="largo">Recibir los&nbsp;ensayos</span><span class="corto">Suscribirse</span></a></div></header></div>
+
+<main id="principal">
+  <div class="envoltura">
+
+    <section class="portada">
+      <a class="volver" href="/investigacion">← La investigación</a>
+      <p class="epigrafe">Desarrollo completo</p>
+      <h1>El enunciado, punto por punto</h1>
+      <p class="entradilla">Las siete afirmaciones que componen la tesis, cada una confrontada con la
+      evidencia publicada y con su estatuto declarado. Esta es la versión larga y técnica; la
+      <a href="/investigacion" style="color:var(--dorado)">introducción está aquí</a>.</p>
+      <div class="meta">
+        <span>Ian de Pablo Ruf</span>
+        <span>12 de agosto de 2026</span>
+        <span>Programa del pulso de tensión</span>
+      </div>
+    </section>
+
+    <div class="doc">
+<h2>El enunciado y su anatomía</h2>
+<blockquote>
+<p><em>«El bostezo es el mecanismo endógeno a través del cual todos los vertebrados armonizan sus tensiones —mentales, fisiológicas, mecánicas— de manera transversal. El estudio de este mecanismo nos enseña cómo abordar el proceso vital de un individuo.»</em></p>
+</blockquote>
+<p>La frase contiene siete afirmaciones de estatuto epistémico muy distinto, y su fuerza depende de no fundirlas. La tabla siguiente las separa; los apartados las desarrollan una a una.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Afirmación</th>
+<th>Estatuto</th>
+<th>Confianza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>El bostezo es un <em>mecanismo</em> (acto motor coordinado multisistema, no reflejo local)</td>
+<td>hecho</td>
+<td>alta</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Es <em>endógeno</em> (autogenerado, espontáneo, anterior al sujeto)</td>
+<td>hecho</td>
+<td>alta</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Está presente en <em>todos los vertebrados</em></td>
+<td>hecho</td>
+<td>alta</td>
+</tr>
+<tr>
+<td>4</td>
+<td><em>Armoniza</em> (opera sobre el sistema, no solo lo delata)</td>
+<td>inferencia</td>
+<td>media — pende de P2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Sus dianas son tensiones <em>mentales, fisiológicas y mecánicas</em></td>
+<td>hecho (que las toca) / inferencia (que las rearmoniza como una)</td>
+<td>alta / media</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Actúa <em>de manera transversal</em> (entre sistemas, entre escalas, entre organismos)</td>
+<td>inferencia estructurada</td>
+<td>media</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Su estudio <em>enseña a abordar el proceso vital</em> del individuo</td>
+<td>consecuencia epistemológica</td>
+<td>media-alta</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Punto 1 — «Mecanismo»: el bostezo es un acto motor coordinado de cuerpo entero  <span class="chip hecho">Hecho</span></h2>
+<p>Lo que el enunciado da por supuesto —que el bostezo es un mecanismo y no un gesto— es, de todo el edificio, lo mejor demostrado. La descripción electrofisiológica del grupo de Arita registró simultáneamente, durante bostezos evocados desde el núcleo paraventricular, el EMG intercostal (respiración), el digástrico (apertura mandibular) y el dorsal (estiramiento axial), junto con el desplazamiento cortical de arousal y los cambios autonómicos de presión y frecuencia cardíaca (Sato-Suzuki et al. 1998). Provine (1986) había establecido ya su consistencia temporal (~6 s) y su carácter de patrón de acción fija. En humanos, Corey et al. (2012) cuantificaron los cambios peri-bostezo en frecuencia cardíaca, volumen pulmonar y tensión muscular ocular; y la resonancia en tiempo real del grupo de Bilston (Martinac et al. 2026) mostró que la maniobra mueve líquido cefalorraquídeo y retorno venoso yugular. La coherencia del patrón se rompe, además, allí donde se rompe el sistema: en la patología desmielinizante el bostezo se altera como conjunto (Ertekin et al. 2017), lo que confirma que es un sistema, no un reflejo mandibular.</p>
+<p>El manuscrito de junio lo condensa: un acto que toca, en segundos, la respiración, la postura axial, el tono muscular, el estado cortical y la dinámica de fluidos craneales. <em>Esa es la base material de la palabra «global»</em> — y de la palabra «mecanismo» del enunciado.</p>
+<p><strong>Cautela heredada de los bloques biomecánicos:</strong> la evidencia es electromiográfica y de imagen, no dinámica. Sabemos el <em>cuándo</em> y el <em>qué</em>; casi nunca el <em>cuánto</em> ni el <em>hacia dónde</em> de las fuerzas. La dimensión que el enunciado llama «mecánica» es, cuantitativamente, la menos medida del campo (2 menciones a fascia en 1.771 artículos): eso no debilita el punto 1, pero obliga a la modestia en el punto 5.</p>
+<h2>Punto 2 — «Endógeno»: la perturbación que el organismo se administra a sí mismo  <span class="chip hecho">Hecho en lo descriptivo; original en lo metodológico</span></h2>
+<p>«Endógeno» sostiene dos cosas distintas, ambas defendibles.</p>
+<p>La primera es descriptiva y sólida: el bostezo es espontáneo, no requiere estímulo, comparte generador central de patrón troncoencefálico con la deglución (Ertekin et al. 2015) y aparece hacia la semana 12 de gestación, antes que casi cualquier control cortical, como uno de los primeros patrones motores organizados (Walusinski 2010; Menin et al. 2019, que lo distingue computacionalmente de la mera apertura bucal por su dinámica temporal). El acto precede al sujeto en el sentido empírico: existe antes de que exista quien pueda quererlo. (El paso a la tesis ontológica «precede al sujeto» es filosofía y debe declararse como tal — el mapeo al ensayo de cognición estructural ya fijó esa frontera.)</p>
+<p>La segunda es la aportación metodológica del manuscrito de junio, y es la lectura fuerte de «endógeno»: donde la fisiología experimental necesita un experimentador que perturbe el sistema desde fuera (férula, anestesia trigeminal, fármaco), <strong>el organismo lleva un perturbador dentro y lo dispara varias veces al día</strong> — una perturbación autogenerada, estereotipada y reproducible, entregada siempre por la misma vía anatómica (Vmes, complejo trigémino-cervical). El bostezo es el sistema perturbándose a sí mismo; por eso su estudio es una ventana experimental gratuita al control del organismo (punto 7).</p>
+<p>A esto se añade la versión ontogénica, la más original y la más arriesgada <strong>[media-especulativa]</strong>: el bostezo fetal como <em>onda de calibración del desarrollo</em>, análoga a las ondas retinianas — no regula capas ya formadas, sino que participa en construir el acoplamiento entre capas. La resonancia materno-fetal (D'Adamo et al. 2026) es su banco empírico emergente.</p>
+<h2>Punto 3 — «Todos los vertebrados»: transversalidad filogenética sin <em>scala naturae</em>  <span class="chip hecho">Hecho</span></h2>
+<p>La transversalidad es el eslabón mejor soportado de la cascada (1.358 registros comparados; de peces a mamíferos; bostezo espontáneo y estereotipado incluso en reptiles — geckos leopardo, <em>Zoolog Sci</em> 2025). Pero el proyecto ya fijó cómo debe leerse para no degradarse en escalera de perfección: como <strong>un núcleo motor conservado sobre el que la evolución envuelve capas de control</strong> — autonómica, hipotalámica (PVN-oxitocina), cortical (arousal) y, donde aparece la sociabilidad, social (contagio). La regularidad observable no es «animales superiores bostezan mejor», sino que <em>la elaboración del circuito del bostezo escala con la elaboración del sistema reticular/neuromodulador de ganancia</em>, no con el tamaño cerebral sin más <strong>[media, falsable — P4]</strong>. El contagio aparece convergentemente donde hay sociabilidad (perros, no solo primates): reclutamiento repetido de un principio, no jerarquía.</p>
+<p>Esta lectura es la que convierte el punto 3 en algo más que un dato zoológico: hace del bostezo un <strong>marcador del número de capas de control que un vertebrado posee</strong> — y prepara el punto 7.</p>
+<h2>Punto 4 — «Armonizan»: la palabra decisiva, y la que aún no está ganada  <span class="chip hipotesis">Inferencia</span></h2>
+<p>Aquí el enunciado dice más de lo que la evidencia ha demostrado, y el propio proyecto tiene registrada la corrección en dos movimientos.</p>
+<p>Primero, el reencuadre conceptual: «armonizar» no debe leerse como homeostasis. El bostezo no aparece en el estado estacionario sino <strong>en las transiciones</strong> (sueño↔vigilia, calma↔alerta; los picos etológicos en transiciones reposo/actividad; Casetta et al. 2022 en hienas salvajes: el bostezo informa del cambio de estado conductual). El concepto correcto es <strong>operador de transición cerca de un punto crítico</strong>: un pulso de reorganización que el sistema dispara cerca del umbral entre dos regímenes para cruzarlo de forma coordinada. Emparentado con la alostasis y la homeorresis, no con el punto de ajuste. Así formulada, la «armonización» deja de ser metáfora musical y se vuelve medible: firmas críticas posturales peri-bostezo (P1), enlentecimiento crítico pre-bostezo (P3), recuperación de estructura 1/f en la variabilidad autonómica (P5, la más débil y declaradamente especulativa).</p>
+<p>Segundo, la honestidad estructural: <strong>todo el verbo «armonizan» pende del experimento de bloqueo (P2)</strong>. La objeción más fuerte —registrada en el manuscrito y en la cascada— es que el bostezo <em>delate</em> una transición orquestada aguas arriba (PVN, generadores de tronco) en lugar de <em>operarla</em>: read-out, no operador. Impedir mecánicamente el acto sin tocar su comando central y medir si alguna variable regulada se degrada es la prueba decisiva; sin ella, el enunciado debe decir, en rigor, «el bostezo es el pulso endógeno que <em>acompaña y presumiblemente ejecuta</em> la armonización». La hipótesis rival global también está registrada y es obligatorio nombrarla: la térmica de Gallup (enfriamiento cerebral), con la temperatura como covariable obligada en cualquier diseño y la relación duración~masa (Massen) como dato que toda teoría debe absorber. P2 es, a la vez, el discriminante frente a esa rival.</p>
+<h2>Punto 5 — «Tensiones mentales, fisiológicas, mecánicas»: tres magnitudes, un formalismo  <span class="chip hecho">Hecho que las toca; inferencia que comparten forma</span></h2>
+<p>Que el bostezo <em>toca</em> los tres dominios es un hecho distribuido en el corpus. Que los tres dominios sean «tensiones» armonizables por un mismo acto exige la disciplina que la integración de escalas impuso como aviso de rigor: la tensión cortical de actomiosina, la tensión miofascial y la «tensión» mental <strong>no son la misma magnitud física</strong>. El eje solo se sostiene si en cada dominio se especifica qué tensión concreta es el parámetro y cómo se mide — si «tensión» queda como palabra-paraguas, el enunciado recae en la infalsabilidad que el prisma de Palagi ya ilustró (la multifuncionalidad como comodín que siempre «se apoya»).</p>
+<table>
+<thead>
+<tr>
+<th>Dominio del enunciado</th>
+<th>Magnitud operacional</th>
+<th>Evidencia en el corpus</th>
+<th>Estatuto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mental</td>
+<td>Estado de arousal / transición de régimen cortical; autocorrelación y varianza EEG pre-bostezo (P3)</td>
+<td>Sato-Suzuki 1998 (desplazamiento cortical); Guggisberg 2010 (bostezo-arousal-vigilancia); Meng 2026 (inercia neural en transiciones); Walusinski 2006 (interocepción)</td>
+<td>hecho (asociación) [alta]</td>
+</tr>
+<tr>
+<td>Fisiológica</td>
+<td>Variables autonómicas (FC, presión, conductancia), respiración, fluidos cráneo-cervicales (LCR, retorno venoso)</td>
+<td>Corey 2012; Greco &amp; Baenninger 1991; Martinac 2026; hipótesis de vía aérea (Doelman &amp; Rijken 2022)</td>
+<td>hecho (el acto las modifica) [alta]</td>
+</tr>
+<tr>
+<td>Mecánica</td>
+<td>Tono miofascial, huso muscular, ATM y acoplamiento mandíbulo-cervical, irradiación motora axial</td>
+<td>Bertolucci 2011 (pandiculación como reseteo de integridad miofascial); Zafar 2000; irradiación en hemiplejía (Meenakshisundaram 2010); punto gatillo que <em>induce</em> bostezo (Eur J Neurol 2009 — la tensión estructural dispara el pulso)</td>
+<td>hecho (asociación) / cuantificación pendiente [media]</td>
+</tr>
+</tbody>
+</table>
+<p>Lo que une las tres filas no es una sustancia sino una <strong>forma dinámica</strong>: el proyecto ya la nombró como homología de papel, no identidad de materia. El precedente molecular (PeCoWaCo: pulsos de contracción cortical destapados por el <em>ablandamiento</em> —la tensión de superficie como parámetro de control, medida vía Fmnl3; Özgüç et al. 2022) demuestra que «pulso de tensión que organiza forma» es un motivo real de la biología, con mecanismo; el bostezo sería su miembro organismal. La afirmación defendible es exactamente esta: <em>el mismo formalismo —oscilador de relajación regulado por tensión que dispara cerca de un umbral— describe procesos de mantenimiento de forma-función en escalas muy separadas</em>. «Es lo mismo» no es comprobable; «comparten forma y firmas estadísticas» sí (P-escala).</p>
+<h2>Punto 6 — «De manera transversal»: tres transversalidades distintas que conviene no confundir  <span class="chip hipotesis">Inferencia estructurada</span></h2>
+<p>El adverbio del enunciado condensa tres tesis separables, cada una con su soporte:</p>
+<p><strong>Transversal entre sistemas (dentro del organismo).</strong> El formalismo ya elegido por el proyecto es Network Physiology (Ivanov): cada estado fisiológico es una topología de red de acoplamientos inter-órgano, y las transiciones son reorganizaciones jerárquicas de esa topología. La versión medible de esta transversalidad es la prueba decisiva de la Idea 4 de la cascada: <strong>¿se reorganiza la matriz de acoplamiento inter-órgano en torno al bostezo?</strong> — la pregunta 20 del marco (¿se concentran los bostezos en los momentos de máxima reorganización TDS?) es su forma canónica.</p>
+<p><strong>Transversal entre escalas (dentro de la vida del organismo).</strong> Del pulso cortical de actomiosina (célula) al tono postural sintonizado cerca de la criticidad (sistema) al bostezo (organismo): la familia de pulsos de tensión de la tesis T3, con PeCoWaCo como ancla molecular y la postura como escala intermedia (Peterka 2002; Hof 2005).</p>
+<p><strong>Transversal entre organismos.</strong> El contagio del bostezo, leído no como curiosidad social sino como <strong>sincronización de transiciones entre organismos</strong> (pregunta 29 del plan modular: el primer dato nuevo producible del programa) — con la resonancia materno-fetal (D'Adamo 2026) como su caso ontogénico extremo: el feto sintonizándose al campo materno a través del bostezo.</p>
+<p>Las tres transversalidades se sostienen por separado con distinta fuerza; el enunciado gana si las enumera en vez de fundirlas, porque cada una tiene su experimento propio.</p>
+<h2>Punto 7 — «Nos enseña cómo abordar el proceso vital de un individuo»: la consecuencia epistemológica  <span class="chip observacion">Media-alta</span></h2>
+<p>Si los puntos 1–6 se sostienen en sus estatutos, la lección metodológica se sigue con naturalidad, y es triple:</p>
+<p><strong>Abordar al individuo por sus transiciones, no por sus estados.</strong> El bostezo enseña que el lugar informativo de un sistema vivo no es su régimen estacionario sino sus umbrales: allí donde cambia de régimen es donde exhibe su organización (enlentecimiento crítico, reorganización de la red). El proceso vital se lee mejor en las costuras que en las telas. Esta es la traducción clínica del reencuadre del punto 4: el bostezo patológico —tras un ictus, en la esclerosis múltiple, en el Parkinson— no como síntoma accesorio sino como <em>señal de un sistema de calibración que ha perdido su punto de operación</em> (carta al neurólogo).</p>
+<p><strong>Abordar al individuo como red, no como agregado.</strong> El bostezo es un test de carga natural y no invasivo del conjunto: un solo acto que solicita simultáneamente respiración, postura, tono, arousal y fluidos, y cuya coherencia (o incoherencia) delata el estado de acoplamiento del sistema completo. Basta una plataforma de fuerzas y registro peri-bostezo: la perturbación endógena hace innecesaria la exógena.</p>
+<p><strong>Abordar al individuo en su ontogenia.</strong> Si la lectura ontogénica es correcta, el bostezo no solo mantiene la coherencia del estado: ayudó a construir la arquitectura que la sostiene. La transversalidad del bostezo y la estructuración del vertebrado serían dos caras del mismo proceso de auto-construcción — y el aparato sobre el que el pulso actúa (sensor Vmes-PIEZO2, andamio colagénico, tono) es, en ~76%, de origen en la cresta neural: el constructor y el regulador se tocan en el gozne trigeminal, que es también el puente de este programa con el marco mayor del proyecto (domesticación, metilación, red fisiológica).</p>
+<p>La imagen que el manuscrito ya acuñó resume el punto: <em>el bostezo es el dedo con que el sistema gira, desde dentro y a intervalos, el mismo dial de ganancia que mantiene la forma del vertebrado al borde de su estabilidad</em>. Estudiarlo es estudiar cómo un ser vivo se sostiene, se recalibra y se construye — que es, exactamente, lo que el enunciado llama «abordar el proceso vital».</p>
+
+<h2>Síntesis: el enunciado, corregido a su versión defendible</h2>
+<blockquote>
+<p>El bostezo es un <strong>pulso endógeno, filogenéticamente conservado en los vertebrados</strong>, que se dispara <strong>en las transiciones entre regímenes</strong> y que toca simultáneamente los dominios mental (arousal), fisiológico (autonómico, respiratorio, fluídico) y mecánico (miofascial, articular, postural). La hipótesis del programa es que no solo <em>acompaña</em> esas transiciones sino que las <em>opera</em> —rearmoniza las tensiones de los tres dominios bajo un mismo formalismo de oscilador de relajación regulado por tensión—, hipótesis que se decide en el experimento de bloqueo (P2) frente a las rivales del read-out y de la termorregulación. Su estudio enseña a abordar el proceso vital del individuo por sus transiciones, como red acoplada y desde su ontogenia.</p>
+</blockquote>
+<p>Lo que separa esta versión del enunciado original no es prudencia retórica: es que cada palabra lleva ahora su prueba. «Armonizan» pende de P2; «tensiones» exige tres operacionalizaciones distintas; «transversal» son tres tesis con tres experimentos; «todos los vertebrados» está ganado; «endógeno» y «mecanismo» también. El programa no necesita que el enunciado sea ya verdadero — necesita que sea falsable, y lo es.</p>
+
+<h2>Referencias</h2>
+<ol>
+<li>Sato-Suzuki I, Kita I, Oguri M, Arita H. <em>J Neurophysiol.</em> 1998;80(5):2765-2775. doi:<a href="https://doi.org/10.1152/jn.1998.80.5.2765" target="_blank" rel="noopener">10.1152/jn.1998.80.5.2765</a></li>
+<li>Provine RR. <em>Ethology.</em> 1986;72(2):109-122. doi:<a href="https://doi.org/10.1111/j.1439-0310.1986.tb00611.x" target="_blank" rel="noopener">10.1111/j.1439-0310.1986.tb00611.x</a></li>
+<li>Corey TP, Shoup-Knox ML, Gordis EB, Gallup GG. <em>Front Evol Neurosci.</em> 2012;3:7. doi:<a href="https://doi.org/10.3389/fnevo.2011.00007" target="_blank" rel="noopener">10.3389/fnevo.2011.00007</a></li>
+<li>Martinac AD, Waters S, Lloyd R, Bilston LE. <em>Respir Physiol Neurobiol.</em> 2026;343:104575. doi:<a href="https://doi.org/10.1016/j.resp.2026.104575" target="_blank" rel="noopener">10.1016/j.resp.2026.104575</a></li>
+<li>Ertekin C, et al. <em>Mult Scler Relat Disord.</em> 2017;17:179-183. doi:<a href="https://doi.org/10.1016/j.msard.2017.06.012" target="_blank" rel="noopener">10.1016/j.msard.2017.06.012</a></li>
+<li>Ertekin C, et al. <em>Exp Brain Res.</em> 2015;233(7):2073-2080. doi:<a href="https://doi.org/10.1007/s00221-015-4278-9" target="_blank" rel="noopener">10.1007/s00221-015-4278-9</a></li>
+<li>Walusinski O. <em>Front Neurol Neurosci.</em> 2010;28:32-41. doi:<a href="https://doi.org/10.1159/000307075" target="_blank" rel="noopener">10.1159/000307075</a></li>
+<li>Menin D, et al. <em>PLoS One.</em> 2019;14(12):e0226921. doi:<a href="https://doi.org/10.1371/journal.pone.0226921" target="_blank" rel="noopener">10.1371/journal.pone.0226921</a></li>
+<li>D'Adamo G, et al. <em>Curr Biol.</em> 2026;36(10). doi:<a href="https://doi.org/10.1016/j.cub.2026.04.025" target="_blank" rel="noopener">10.1016/j.cub.2026.04.025</a></li>
+<li>Casetta G, Cordoni G, Palagi E. <em>Behav Ecol Sociobiol.</em> 2022. doi:<a href="https://doi.org/10.1007/s00265-022-03261-y" target="_blank" rel="noopener">10.1007/s00265-022-03261-y</a></li>
+<li>Bertolucci LF. <em>J Bodyw Mov Ther.</em> 2011;15(3):268-280. doi:<a href="https://doi.org/10.1016/j.jbmt.2010.12.006" target="_blank" rel="noopener">10.1016/j.jbmt.2010.12.006</a></li>
+<li>Özgüç Ö, et al. <em>PLoS Biol.</em> 2022;20(3):e3001593. doi:<a href="https://doi.org/10.1371/journal.pbio.3001593" target="_blank" rel="noopener">10.1371/journal.pbio.3001593</a></li>
+<li>Gallup AC, Gallup GG. <em>Physiol Behav.</em> 2008;95(1-2):10-16. doi:<a href="https://doi.org/10.1016/j.physbeh.2008.05.003" target="_blank" rel="noopener">10.1016/j.physbeh.2008.05.003</a></li>
+<li>Massen JJM, Gallup AC. <em>Neurosci Biobehav Rev.</em> 2017;80:573-585. doi:<a href="https://doi.org/10.1016/j.neubiorev.2017.07.006" target="_blank" rel="noopener">10.1016/j.neubiorev.2017.07.006</a></li>
+<li>Guggisberg AG, et al. <em>Neurosci Biobehav Rev.</em> 2010. doi:<a href="https://doi.org/10.1016/j.neubiorev.2010.03.008" target="_blank" rel="noopener">10.1016/j.neubiorev.2010.03.008</a></li>
+<li>Walusinski O. <em>Med Hypotheses.</em> 2006;67(1):6-14. doi:<a href="https://doi.org/10.1016/j.mehy.2006.01.020" target="_blank" rel="noopener">10.1016/j.mehy.2006.01.020</a></li>
+<li>Doelman CJ, Rijken JA. <em>Sleep Breath.</em> 2022;26(4):1561-1572. doi:<a href="https://doi.org/10.1007/s11325-022-02565-7" target="_blank" rel="noopener">10.1007/s11325-022-02565-7</a></li>
+<li>Zafar H, Nordh E, Eriksson PO. <em>Arch Oral Biol.</em> 2000;45(8):675-682. doi:<a href="https://doi.org/10.1016/s0003-9969(00" target="_blank" rel="noopener">10.1016/s0003-9969(00</a>)00032-7</li>
+<li>Meenakshisundaram R, et al. <em>Front Neurol Neurosci.</em> 2010;28:134-139. doi:<a href="https://doi.org/10.1159/000307095" target="_blank" rel="noopener">10.1159/000307095</a></li>
+<li>Palagi E, Guillén-Salazar F, Llamazares-Martín C. <em>Sci Rep.</em> 2019;9:17226. doi:<a href="https://doi.org/10.1038/s41598-019-53613-4" target="_blank" rel="noopener">10.1038/s41598-019-53613-4</a></li>
+<li>Ivanov PCh. <em>Front Netw Physiol.</em> 2021;1:711778. doi:<a href="https://doi.org/10.3389/fnetp.2021.711778" target="_blank" rel="noopener">10.3389/fnetp.2021.711778</a></li>
+<li>Peterka RJ. <em>J Neurophysiol.</em> 2002;88(3):1097-1118. doi:<a href="https://doi.org/10.1152/jn.2002.88.3.1097" target="_blank" rel="noopener">10.1152/jn.2002.88.3.1097</a></li>
+<li>Woo SH, et al. <em>Nat Neurosci.</em> 2015;18(10):1756-1762. doi:<a href="https://doi.org/10.1038/nn.4162" target="_blank" rel="noopener">10.1038/nn.4162</a></li>
+<li>Meng X, et al. bioRxiv 2026. doi:<a href="https://doi.org/10.64898/2026.04.26.720882" target="_blank" rel="noopener">10.64898/2026.04.26.720882</a> <em>(preprint)</em></li>
+</ol>
+    </div>
+
+    <div class="llamada">
+      <h2>Los ensayos desarrollan esto sin prisa</h2>
+      <p>Cada texto toma una pieza de aquí y la trabaja entera. Se publican en Substack y llegan
+      por correo a quien los haya pedido.</p>
+      <a class="boton" href="/#suscribir">Recibir los ensayos</a>
+    </div>
+
+  </div>
+</main>
+
+<div data-pie><footer class="pie"><div class="pie__int"><span>© 2026 Ian de Pablo Ruf · Andorra</span><span class="pie__enlaces"><a href="/investigacion">La investigación</a><a href="/autor">Quién escribe</a><a href="https://lafilosofiadelbostezo.substack.com" rel="me" target="_blank">Substack</a></span><span class="pie__paleta" title="Paleta oficial"><i style="background:#F6F1E8"></i><i style="background:#3F5A4B"></i><i style="background:#1E2A44"></i><i style="background:#2F3A3D"></i><i style="background:#C8A96B"></i></span></div></footer></div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
