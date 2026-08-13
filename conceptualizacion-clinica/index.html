@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conceptualización clínica · La filosofía del bostezo</title>
+<meta name="description" content="El trigémino en el control postural: anatomía, evidencia contradictoria y una hipótesis dinámica. Por qué medio siglo de estudios no converge y qué experimento lo decidiría.">
+<link rel="canonical" href="https://filosofiadelbostezo.com/conceptualizacion-clinica">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Conceptualización clínica">
+<meta property="og:description" content="El trigémino no como una causa que mejora la postura, sino como un parámetro de control. Por qué la evidencia no converge y qué diseño lo resolvería.">
+<meta property="og:url" content="https://filosofiadelbostezo.com/conceptualizacion-clinica">
+<meta property="og:image" content="https://filosofiadelbostezo.com/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;600&display=swap">
+<style>
+:root{
+  --noche:#1E2A44; --noche-900:#162034; --noche-700:#243354;
+  --marfil:#F6F1E8; --verde:#3F5A4B; --pizarra:#2F3A3D; --dorado:#C8A96B;
+  --texto:#F6F1E8; --texto-suave:rgba(246,241,232,.72); --texto-tenue:rgba(246,241,232,.52);
+  --linea:rgba(246,241,232,.14);
+  --serif:'Lora','Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --sans:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --ancho:1180px; --r:14px; --ease:cubic-bezier(.22,.61,.36,1);
+  --medida:34rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--noche);color:var(--texto);font-family:var(--sans);
+     font-weight:300;font-size:1.0625rem;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.saltar{position:absolute;left:-9999px}
+.saltar:focus{left:1rem;top:1rem;z-index:99;background:var(--dorado);color:var(--noche-900);padding:.6rem 1rem;border-radius:6px}
+:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+
+.envoltura{max-width:var(--ancho);margin:0 auto;padding:0 1.5rem}
+
+/* cabecera */
+.cabecera{border-bottom:1px solid var(--linea);position:sticky;top:0;z-index:20;
+  background:rgba(30,42,68,.86);backdrop-filter:blur(10px)}
+.cabecera .envoltura{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
+.marca{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--serif);font-size:.95rem;letter-spacing:.01em}
+.iso{width:26px;height:26px;color:var(--dorado);flex:none}
+.menu{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-size:.86rem;letter-spacing:.04em}
+.menu a{text-decoration:none;color:var(--texto-suave);transition:color .25s var(--ease)}
+.menu a:hover,.menu a[aria-current]{color:var(--dorado)}
+
+/* portada */
+.portada{padding:5.5rem 0 3rem;border-bottom:1px solid var(--linea)}
+.epigrafe{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado);margin:0 0 1.4rem}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5.2vw,3.4rem);line-height:1.12;
+   margin:0 0 1.6rem;max-width:19ch;letter-spacing:-.015em}
+.entradilla{font-size:1.2rem;color:var(--texto-suave);max-width:var(--medida);margin:0}
+
+/* cuerpo */
+main section{padding:3.4rem 0;border-bottom:1px solid var(--linea)}
+main section:last-of-type{border-bottom:0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.35rem,2.9vw,1.9rem);
+   line-height:1.25;margin:0 0 1.5rem;max-width:24ch;letter-spacing:-.01em}
+p{max-width:var(--medida);margin:0 0 1.25rem}
+p:last-child{margin-bottom:0}
+strong{font-weight:600;color:var(--marfil)}
+em{font-style:italic}
+.suelta{font-family:var(--serif);font-size:1.5rem;line-height:1.4;color:var(--marfil);
+  max-width:22ch;margin:2rem 0;padding-left:1.4rem;border-left:2px solid var(--dorado)}
+
+/* SIGNATURE: etiquetas de confianza */
+.chip{display:inline-flex;align-items:center;gap:.42rem;font-family:var(--sans);
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  padding:.24rem .62rem;border-radius:100px;border:1px solid;white-space:nowrap;
+  vertical-align:middle;translate:0 -1px}
+.chip::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.chip.hecho{color:#9CC5A8;border-color:rgba(156,197,168,.42);background:rgba(63,90,75,.3)}
+.chip.hipotesis{color:var(--dorado);border-color:rgba(200,169,107,.42);background:rgba(200,169,107,.1)}
+.chip.observacion{color:#C6D2DA;border-color:rgba(198,210,218,.34);background:rgba(47,58,61,.5)}
+.chip.especulacion{color:var(--texto-tenue);border-color:var(--linea);background:transparent;border-style:dashed}
+.aviso{max-width:var(--medida);font-size:.95rem;color:var(--texto-tenue);
+  border-left:1px solid var(--linea);padding-left:1.2rem;margin:1.5rem 0}
+
+/* formación */
+.formacion{list-style:none;padding:0;margin:0;max-width:var(--medida)}
+.formacion li{padding:.85rem 0;border-bottom:1px solid var(--linea);display:flex;gap:1rem;
+  align-items:baseline;justify-content:space-between;font-size:.98rem}
+.formacion li:last-child{border-bottom:0}
+.formacion .anio{color:var(--dorado);font-size:.8rem;letter-spacing:.08em;flex:none}
+
+/* contrato */
+.contrato{background:var(--noche-900);border-radius:var(--r);padding:2.2rem;border:1px solid var(--linea)}
+.contrato h2{margin-top:0}
+.leyenda{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.6rem}
+
+/* llamada */
+.llamada{background:var(--verde);border-radius:var(--r);padding:2.4rem;margin:3.4rem 0}
+.llamada h2{margin-bottom:.9rem}
+.llamada p{color:rgba(246,241,232,.82)}
+.boton{display:inline-block;margin-top:1.2rem;background:var(--dorado);color:var(--noche-900);
+  text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.03em;
+  padding:.8rem 1.6rem;border-radius:100px;transition:transform .25s var(--ease),filter .25s var(--ease)}
+.boton:hover{transform:translateY(-2px);filter:brightness(1.06)}
+
+/* pie */
+.pie{border-top:1px solid var(--linea);padding:2.6rem 0;color:var(--texto-tenue);font-size:.85rem}
+.pie .envoltura{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:space-between;align-items:center}
+.pie a{color:var(--texto-suave);text-decoration:none}
+.pie a:hover{color:var(--dorado)}
+
+@media (max-width:700px){
+  .menu{display:none}
+  .portada{padding-top:3.5rem}
+  .llamada,.contrato{padding:1.6rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* --- revisión clínica --- */
+.doc h2{margin-top:3.4rem;display:flex;gap:.9rem;align-items:baseline;max-width:30ch}
+.doc h2:first-of-type{margin-top:0}
+.doc h3{margin:2.4rem 0 1rem;font-family:var(--serif);font-weight:500;
+  font-size:1.12rem;line-height:1.35;display:flex;gap:.8rem;align-items:baseline;max-width:34ch}
+.doc .num{font-family:var(--sans);font-size:.72rem;font-weight:600;letter-spacing:.1em;
+  color:var(--dorado);flex:none;translate:0 -.15em}
+.doc h2.sin-num{display:block}
+.doc p{max-width:var(--medida)}
+.doc .cita{font-size:.68em;color:var(--dorado);font-weight:600;padding-left:.1em}
+.doc .formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.95rem;
+  background:var(--noche-900);border:1px solid var(--linea);border-radius:var(--r);
+  padding:1.2rem 1.4rem;color:var(--marfil);line-height:1.9;max-width:var(--medida)}
+.doc .formula span{color:var(--texto-suave)}
+.refs{list-style:none;padding:0;margin:1.6rem 0 0;counter-reset:r}
+.refs li{counter-increment:r;position:relative;padding:.6rem 0 .6rem 2.5rem;
+  font-size:.88rem;color:var(--texto-tenue);border-bottom:1px solid rgba(246,241,232,.07);
+  max-width:var(--medida)}
+.refs li::before{content:"["counter(r)"]";position:absolute;left:0;top:.6rem;
+  font-family:var(--sans);color:var(--dorado);font-size:.72rem;font-weight:600}
+.refs a{color:var(--texto-suave);text-decoration:none;border-bottom:1px solid var(--linea);
+  white-space:nowrap;font-size:.92em}
+.refs a:hover{color:var(--dorado);border-bottom-color:var(--dorado)}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;font-size:.82rem;color:var(--texto-tenue);
+  margin:1.6rem 0 0;padding-top:1.2rem;border-top:1px solid var(--linea)}
+</style>
+<link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<g id="isotipo-min" fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path opacity=".55" d="M100.0 64.0C103.1 64.0 106.3 64.4 109.3 65.2C112.3 66.0 115.3 67.3 118.0 68.8C120.7 70.4 123.3 72.3 125.5 74.5C127.7 76.7 129.6 79.3 131.2 82.0C132.7 84.7 134.0 87.7 134.8 90.7C135.6 93.7 136.0 96.9 136.0 100.0C136.0 103.1 135.6 106.3 134.8 109.3C134.0 112.3 132.7 115.3 131.2 118.0C129.6 120.7 127.7 123.3 125.5 125.5C123.3 127.7 120.7 129.6 118.0 131.2C115.3 132.7 112.3 134.0 109.3 134.8C106.3 135.6 103.1 136.0 100.0 136.0C96.9 136.0 93.7 135.6 90.7 134.8C87.7 134.0 84.7 132.7 82.0 131.2C79.3 129.6 76.7 127.7 74.5 125.5C72.3 123.3 70.4 120.7 68.8 118.0C67.3 115.3 66.0 112.3 65.2 109.3C64.4 106.3 64.0 103.1 64.0 100.0C64.0 96.9 64.4 93.7 65.2 90.7C66.0 87.7 67.3 84.7 68.8 82.0C70.4 79.3 72.3 76.7 74.5 74.5C76.7 72.3 79.3 70.4 82.0 68.8C84.7 67.3 87.7 66.0 90.7 65.2C93.7 64.4 96.9 64.0 100.0 64.0Z"/>
+      <path opacity=".78" d="M100.0 42.0C104.8 42.0 109.8 44.8 114.3 46.6C118.9 48.4 123.1 50.4 127.3 52.8C131.4 55.2 135.3 57.9 139.1 60.9C142.9 63.9 147.8 66.9 150.2 71.0C152.6 75.1 152.7 80.9 153.4 85.7C154.1 90.5 154.5 95.2 154.5 100.0C154.5 104.8 154.1 109.5 153.4 114.3C152.7 119.1 152.6 124.9 150.2 129.0C147.8 133.1 142.9 136.1 139.1 139.1C135.3 142.1 131.4 144.8 127.3 147.2C123.1 149.6 118.9 151.6 114.3 153.4C109.8 155.2 104.8 158.0 100.0 158.0C95.2 158.0 90.2 155.2 85.7 153.4C81.1 151.6 76.9 149.6 72.7 147.2C68.6 144.8 64.7 142.1 60.9 139.1C57.1 136.1 52.2 133.1 49.8 129.0C47.4 124.9 47.3 119.1 46.6 114.3C45.9 109.5 45.5 104.8 45.5 100.0C45.5 95.2 45.9 90.5 46.6 85.7C47.3 80.9 47.4 75.1 49.8 71.0C52.2 66.9 57.1 63.9 60.9 60.9C64.7 57.9 68.6 55.2 72.7 52.8C76.9 50.4 81.1 48.4 85.7 46.6C90.2 44.8 95.2 42.0 100.0 42.0Z"/>
+      <path opacity="1" d="M100.0 20.0C106.3 20.0 112.9 26.7 118.8 29.9C124.6 33.1 129.8 35.9 135.2 39.1C140.6 42.2 145.6 45.2 151.3 48.7C157.0 52.2 166.2 54.6 169.3 60.0C172.4 65.4 169.9 74.6 170.1 81.2C170.3 87.9 170.4 93.7 170.4 100.0C170.4 106.3 170.3 112.1 170.1 118.8C169.9 125.4 172.4 134.6 169.3 140.0C166.2 145.4 157.0 147.8 151.3 151.3C145.6 154.8 140.6 157.8 135.2 160.9C129.8 164.1 124.6 166.9 118.8 170.1C112.9 173.3 106.3 180.0 100.0 180.0C93.7 180.0 87.1 173.3 81.2 170.1C75.4 166.9 70.2 164.1 64.8 160.9C59.4 157.8 54.4 154.8 48.7 151.3C43.0 147.8 33.8 145.4 30.7 140.0C27.6 134.6 30.1 125.4 29.9 118.8C29.7 112.1 29.6 106.3 29.6 100.0C29.6 93.7 29.7 87.9 29.9 81.2C30.1 74.6 27.6 65.4 30.7 60.0C33.8 54.6 43.0 52.2 48.7 48.7C54.4 45.2 59.4 42.2 64.8 39.1C70.2 35.9 75.4 33.1 81.2 29.9C87.1 26.7 93.7 20.0 100.0 20.0Z"/>
+      <circle fill="#C8A96B" stroke="none" cx="100" cy="100" r="21"/>
+    </g>
+</defs></svg>
+<div data-cabecera></div>
+
+<main id="principal">
+  <div class="envoltura">
+
+    <section class="portada">
+      <p class="epigrafe">Conceptualización clínica</p>
+      <h1>El trigémino en el control postural</h1>
+      <p class="entradilla">Anatomía, evidencia, controversia y una hipótesis dinámica. Medio siglo
+      de estudios que no converge — y la sospecha de que el problema no está en los datos sino en
+      la pregunta.</p>
+      <div class="meta">
+        <span>Ian de Pablo Ruf</span>
+        <span>Junio de 2026</span>
+        <span>Artículo de revisión e hipótesis</span>
+      </div>
+    </section>
+
+    <div class="doc">
+      <h2 class="sin-num">Resumen</h2>
+      <p>El control postural humano se concibe como un proceso multisensorial en el que el sistema nervioso integra y repondera continuamente información visual, vestibular y somatosensorial para estabilizar un cuerpo intrínsecamente inestable. Dentro de esa arquitectura, un canal aferente ha recibido mucha menos atención que los demás: el trigémino y, con él, el sistema estomatognático (dientes, músculos masticatorios, articulación temporomandibular). Esta revisión sintetiza las bases anatómicas y fisiológicas que justifican una contribución trigeminal a la postura, revisa críticamente la evidencia experimental —que es real pero heterogénea y a menudo contradictoria— y diagnostica por qué los resultados son ambiguos. Sobre ese diagnóstico se propone una hipótesis: la aferencia trigeminal no debería estudiarse como una causa que «<em>mejora</em>» o «<em>empeora</em>» la postura, sino como un modulador de la ganancia de acoplamiento de un canal sensorial, es decir, como un parámetro de control del sistema postural entendido como sistema dinámico. Esta reformulación, anclada en la dinámica de coordinación y en la teoría de las transiciones críticas, genera predicciones falsables y un diseño experimental con una cadena causal de tres eslabones (manipulación medida → cambio aferente verificado → cambio dinámico) que podría resolver la ambigüedad actual.</p>
+      <h2 class="sin-num">Palabras clave</h2>
+      <p>Trigémino · control postural · sistema estomatognático · reponderación sensorial · núcleo mesencefálico del trigémino · dinámica de coordinación · transiciones críticas · oclusión · articulación temporomandibular.</p>
+      <h2><span class="num">1</span>Introducción</h2>
+      <p>Mantenerse de pie es, desde el punto de vista físico, una proeza poco reconocida: el cuerpo humano es un péndulo invertido de múltiples segmentos, mecánicamente inestable, cuyo centro de masas se proyecta sobre una base de sustentación reducida. La estabilidad no es pasiva; se produce mediante un bucle de control sensomotor que estima el estado del cuerpo a partir de señales sensoriales y genera momentos correctores de forma continua. La neurociencia del control postural ha establecido que ese bucle no usa pesos fijos para cada modalidad sensorial, sino que los reajusta según su fiabilidad y el contexto, en un proceso conocido como reponderación sensorial <sup class="cita">18</sup><sup class="cita">19</sup>.</p>
+      <p>La literatura ha estudiado con detalle las tres aferencias clásicas —visión, sistema vestibular y propiocepción de tronco y miembros inferiores—. Una cuarta vía, en cambio, ha quedado en la periferia del campo: la aferencia trigeminal y, más ampliamente, el sistema estomatognático. La intuición de una conexión entre la mandíbula, la oclusión dental y la postura corporal es antigua en odontología, fisioterapia y osteopatía, y ha generado tanto entusiasmo clínico como escepticismo metodológico <sup class="cita">1</sup>. El propósito de esta revisión es triple: (i) exponer las bases anatómicas y fisiológicas que hacen plausible una contribución trigeminal a la postura; (ii) revisar críticamente la evidencia experimental, atendiendo de forma explícita a sus contradicciones; y (iii) proponer una reformulación conceptual —el trigémino como parámetro de control de la dinámica postural— que convierte una controversia estancada en un programa de hipótesis comprobables.</p>
+      <p>Adelantamos la tesis para que el lector la tenga presente: gran parte de la ambigüedad de la literatura proviene de plantear la pregunta equivocada. Preguntar si el trigémino «<em>mejora</em>» o «<em>no afecta</em>» a la postura presupone una relación causal lineal y dependiente de la dosis. Si, en cambio, el trigémino modula la ganancia con la que una entrada sensorial se acopla al controlador postural, entonces sus efectos serán pequeños, dependientes del contexto y no lineales —exactamente el patrón confuso que muestra la evidencia—. Reformular el problema en términos de sistemas dinámicos no solo lo ordena: lo hace comprobable.</p>
+      <h2><span class="num">2</span>Bases anatómicas y fisiológicas</h2>
+      <h3><span class="num">2.1</span>El nervio trigémino: ramas, emergencias y anastomosis</h3>
+      <p>El trigémino (V par craneal) es el principal nervio sensitivo de la cara y el nervio motor de la masticación. Sus tres divisiones —oftálmica (V1), maxilar (V2) y mandibular (V3)— convergen en el ganglio trigeminal (de Gasser) y emergen a la superficie a través de forámenes óseos característicos: supraorbitario (V1), infraorbitario (V2) y mentoniano (V3). A lo largo de su trayecto, las ramas trigeminales establecen numerosas anastomosis con otros nervios craneales y cervicales —notablemente con el facial (VII) y con aferencias del plexo cervical—, formando una red periférica con caminos alternativos. Esta topología anastomótica es relevante: define la conectividad efectiva del canal, y sugiere que el entorno mecánico en torno a esas emergencias y conexiones podría modular cómo la carga mecánica se traduce en señalización aferente.</p>
+      <p>Más allá de su función sensitiva cutánea, el trigémino conduce información propioceptiva profunda de los músculos masticatorios y de los ligamentos periodontales. Es esta vertiente propioceptiva —no la nociceptiva ni la táctil— la que resulta candidata a participar en el control postural.</p>
+      <h3><span class="num">2.2</span>El núcleo mesencefálico del trigémino: una propiocepción central única</h3>
+      <p>El núcleo mesencefálico del trigémino (Vmes o MTN) constituye una rareza neuroanatómica de primer orden: es el único conjunto de neuronas sensoriales primarias cuyos somas se ubican dentro del sistema nervioso central, en lugar de en un ganglio periférico <sup class="cita">13</sup><sup class="cita">15</sup>. Sus neuronas reciben aferencias propioceptivas de los husos de los músculos elevadores de la mandíbula y de los mecanorreceptores del ligamento periodontal, y proyectan principalmente al núcleo motor trigeminal (cierre mandibular) y al núcleo supratrigeminal, participando en los reflejos mandibulares <sup class="cita">14</sup>. Estudios transcriptómicos recientes muestran que las neuronas del Vmes comparten rasgos con los propioceptores de los grupos Ia y II pero poseen firmas moleculares propias, y que su papel funcional excede el reflejo mandibular clásico, contribuyendo a la maduración sensomotora <sup class="cita">13</sup>.</p>
+      <p>Electrofisiológicamente, las neuronas del Vmes generan disparos sostenidos y en ráfaga mediante corrientes específicas (p. ej., canales Nav1.6 y corrientes de entrada persistentes) y están moduladas por serotonina y noradrenalina, lo que les confiere flexibilidad en la integración sensomotora; su disfunción se asocia a bruxismo y trastornos temporomandibulares <sup class="cita">15</sup>. La importancia para esta revisión es que el Vmes sitúa la propiocepción craneomandibular a muy pocas sinapsis de las estructuras del tronco encefálico implicadas en el tono y el control postural.</p>
+      <h3><span class="num">2.3</span>Husos masticatorios y mecanorreceptores periodontales</h3>
+      <p>Dos poblaciones de receptores alimentan la propiocepción trigeminal. Los husos neuromusculares de los músculos elevadores (sobre todo masetero y temporal) informan de la longitud y velocidad de cambio de estos músculos. Los mecanorreceptores del ligamento periodontal codifican las fuerzas aplicadas sobre los dientes durante el contacto oclusal y la mordida. Ambas vías convergen, vía Vmes y núcleos trigeminales, sobre circuitos del tronco. Funcionalmente, esto implica que tanto la posición y actividad mandibular como el patrón de contacto dental constituyen fuentes de información propioceptiva potencialmente disponibles para el control postural.</p>
+      <h3><span class="num">2.4</span>Conexiones centrales: trigémino-vestibular, retículo, colículo y cerebelo</h3>
+      <p>La plausibilidad de una influencia postural depende de que exista un sustrato de conexión central entre la aferencia trigeminal y los circuitos posturales. La literatura describe conexiones recíprocas entre los núcleos trigeminales y los núcleos vestibulares, así como proyecciones hacia la formación reticular, el colículo superior y el cerebelo, todas ellas estructuras implicadas en la orientación de la cabeza y el control del equilibrio <sup class="cita">1</sup><sup class="cita">3</sup>. La revisión clásica de Cuccia y Caradonna sintetiza estas vías y formula la hipótesis de que una información propioceptiva estomatognática inexacta podría afectar al control de la cabeza y, en cascada, a la posición del cuerpo <sup class="cita">1</sup>. La conexión trigémino-vestibular es especialmente sugerente, porque el sistema vestibular es uno de los pilares del control postural y la cabeza es el segmento donde conviven los receptores vestibulares y los trigeminales.</p>
+      <h3><span class="num">2.5</span>Convergencia trigémino-cervical</h3>
+      <p>Un eslabón anatómico adicional refuerza la plausibilidad de la vía: la convergencia entre aferencias trigeminales y aferencias de la parte alta de la columna cervical (raíces C1–C3) sobre neuronas comunes del tronco encefálico, el llamado complejo trigémino-cervical. Esta convergencia, bien establecida en el contexto del dolor craneofacial referido, implica que la información craneomandibular y la cervical comparten estaciones de procesamiento. Dado que la propiocepción cervical alta es, a su vez, una fuente reconocida para el control de la cabeza y la orientación postural, el complejo trigémino-cervical ofrece una ruta por la que la actividad estomatognática podría influir en la postura a través del segmento craneocervical, coherente con la asociación observada entre bruxismo y posición cervical anterior <sup class="cita">11</sup>. La cabeza emerge así como un segmento doblemente informativo: alberga los receptores vestibulares y recibe, vía trigémino y cuello, una rica propiocepción craneomandibular cuya coherencia o incoherencia condicionaría el control del conjunto.</p>
+      <h2><span class="num">3</span>Marco funcional: control postural y reponderación sensorial</h2>
+      <h3><span class="num">3.1</span>El modelo de péndulo invertido y los pesos sensoriales</h3>
+      <p>El paradigma dominante modela la bipedestación quieta como un péndulo invertido controlado por retroalimentación: el sistema nervioso estima la inclinación y velocidad del cuerpo combinando señales sensoriales y genera un par corrector en el tobillo (y, ante perturbaciones mayores, en la cadera). Cada modalidad contribuye con un peso que refleja su fiabilidad estimada. Cuando una fuente se degrada o se vuelve poco fiable (ojos cerrados, superficie inestable), el sistema transfiere peso a las demás.</p>
+      <p>Conceptualmente, la reponderación se entiende bien como un problema de estimación óptima del estado: el sistema nervioso combinaría las señales sensoriales ponderándolas por su fiabilidad estimada —al modo de un filtro que pesa cada fuente por la inversa de su incertidumbre— y apoyándose en un modelo interno de la dinámica del cuerpo. En este marco, «<em>subir el peso</em>» de un canal equivale a tratarlo como más fiable, y «<em>bajarlo</em>», como más ruidoso. La consecuencia para el trigémino es directa: una manipulación que altere la calidad —la relación señal-ruido— de la aferencia trigeminal debería traducirse en un cambio de su peso, y por tanto de su influencia sobre la salida postural, de forma dependiente de qué otros canales estén disponibles y de cuán fiables sean en ese momento.</p>
+      <h3><span class="num">3.2</span>La reponderación sensorial es dinámica y dependiente del contexto</h3>
+      <p>La reponderación no es un ajuste estático sino un proceso con su propia dinámica temporal. Asländer y Peterka mostraron, mediante estímulos visuales y de superficie de amplitud variable, una clara evidencia de reponderación intra e intermodal, con dinámicas asimétricas: el reajuste es más lento al pasar de alta a baja amplitud de estímulo que a la inversa <sup class="cita">18</sup>. Trabajo más reciente indica que la reponderación visual depende de la velocidad del estímulo más que de su amplitud, y extiende este hallazgo a la propiocepción <sup class="cita">19</sup>. En patología, la reponderación se altera de forma informativa: en la enfermedad de Parkinson, un umbral propioceptivo elevado modifica la capacidad de reponderar ante pequeños cambios de estímulo <sup class="cita">20</sup>. La lección general es que el peso de un canal sensorial es una variable de estado del sistema, no una constante.</p>
+      <p>Consecuencia para el trigémino. Si los pesos sensoriales son ajustables y dependientes del contexto, entonces una entrada como la trigeminal no tiene un efecto fijo: su contribución será mayor cuando los canales dominantes se degraden o cuando la tarea se vuelva exigente, y menor en condiciones fáciles. Esto predice —correctamente, como veremos— que los efectos trigeminales sobre la postura aparecerán sobre todo bajo perturbación, y serán difíciles de detectar en posturografía estática cómoda.</p>
+      <h2><span class="num">4</span>Evidencia empírica de la influencia trigeminal y estomatognática</h2>
+      <h3><span class="num">4.1</span>Manipulación aferente directa: la anestesia trigeminal</h3>
+      <p>La prueba más directa de causalidad procede de suprimir la aferencia. Gangloff y colaboradores aplicaron anestesia troncular unilateral del nervio mandibular en sujetos sanos y midieron el control postural ortostático mediante estatokinesigramas antes y después. Encontraron modificaciones del control postural tras la anestesia —cambios en el área del centro de presiones con ojos abiertos y en la desviación lateral con ojos cerrados—, documentando que la aferencia trigeminal influye en la estabilización postural <sup class="cita">2</sup>. Es un resultado clave: una manipulación que toca el canal aferente cambia la postura, lo que sitúa al trigémino como entrada genuina y no como mero epifenómeno.</p>
+      <h3><span class="num">4.2</span>Oclusión dental y equilibrio</h3>
+      <p>La línea más voluminosa de evidencia procede de manipular la oclusión. La revisión de Julià-Sánchez y colaboradores concluye que las aferencias de la oclusión dental contribuyen al control del equilibrio, y de manera reforzada cuando hay perturbaciones externas (superficie inestable, fatiga, doble tarea); describe además una conexión recíproca trigémino-vestibular como sustrato plausible <sup class="cita">3</sup>. Una revisión sistemática posterior sostiene una relación entre clase oclusal y postura de cabeza y cuerpo a través del ligamento periodontal y el trigémino <sup class="cita">4</sup>, aunque la calidad metodológica de esta literatura es desigual. En población con trastornos temporomandibulares, El Zoghbi y colaboradores observaron que la colocación de una férula oclusal reducía significativamente el área y la longitud de balanceo, sobre todo con ojos cerrados y a los tres meses <sup class="cita">5</sup>. El patrón —efectos que emergen con ojos cerrados— es coherente con la reponderación dependiente del contexto descrita en la sección 3.</p>
+      <p>Conviene retener algunas cifras para calibrar la solidez de esta línea. El estudio de El Zoghbi incluyó 47 pacientes con TTM evaluadas con plataforma de fuerzas en seis condiciones visuales, a la semana y a los tres meses de tratamiento con una férula superior; las reducciones de superficie y longitud de balanceo alcanzaron significación sobre todo a los tres meses y con ojos cerrados <sup class="cita">5</sup>. Son muestras moderadas, sin grupo control sano concurrente y, de nuevo, sin un lector que confirme que el cambio aferente se produjo, lo que limita la inferencia causal pese a la consistencia del patrón temporal.</p>
+      <h3><span class="num">4.3</span>Apretamiento mandibular (jaw clenching): facilitación, pero inconsistente</h3>
+      <p>Una manipulación distinta es el apretamiento voluntario de la mandíbula, que combina actividad motora masticatoria con aferencia propioceptiva. La evidencia es genuinamente mixta. Fadillioglu y colaboradores hallaron que el apretamiento mejora el equilibrio dinámico en estado estacionario y que el efecto persiste tras perder la novedad de la tarea, descartando que se trate de un mero beneficio de doble tarea atencional <sup class="cita">8</sup>. Sin embargo, el mismo grupo no encontró efectos significativos del apretamiento sobre el equilibrio reactivo dinámico ante perturbaciones de plataforma, salvo cambios limitados en reflejos y dependientes de la dirección de la perturbación, en parte enmascarados por fuertes efectos de aprendizaje <sup class="cita">9</sup>. Ringhof y colaboradores tampoco hallaron efecto del apretamiento submáximo sobre la recuperación del equilibrio tras una pérdida hacia delante, aunque observaron que la fuerza de mordida aumentaba espontáneamente durante la recuperación, sugiriendo que apretar forma parte de un repertorio fisiológico para mejorar el rendimiento motor <sup class="cita">10</sup>. En conjunto: hay señales de facilitación, pero su magnitud y condiciones de aparición son inconsistentes.</p>
+      <h3><span class="num">4.4</span>Trastornos temporomandibulares y postura: el corazón de la controversia</h3>
+      <p>Si el sistema estomatognático influye en la postura, los pacientes con trastornos temporomandibulares (TTM) deberían mostrar alteraciones posturales. La evidencia es precisamente aquí donde más se divide. Dolina y colaboradores, estratificando por subtipo de TTM, hallaron que las mayores diferencias en el área y la velocidad del centro de presiones se daban en el subtipo miofascial (muscular) frente a controles, sugiriendo que solo algunas formas de TTM afectan al equilibrio <sup class="cita">6</sup>. En cambio, Antczak y colaboradores, con criterios DC/TMD y posturografía estática, no encontraron diferencias significativas en los parámetros del centro de presiones entre pacientes con TTM y controles; el factor que sí movía el balanceo era la visión (ojos cerrados), con independencia del TTM <sup class="cita">7</sup>. Esta contradicción —efecto presente solo en subtipos musculares vs. ausencia de efecto global— es el patrón típico de un fenómeno real pero pequeño, dependiente de subtipo y de condición, y fácilmente borrado por la heterogeneidad metodológica.</p>
+      <p>Las cifras ilustran la fragilidad. El estudio de Dolina comparó 25 pacientes con TTM (9 miofasciales, 9 con desplazamiento discal, 7 mixtos) frente a 11 controles, hallando las mayores diferencias en el subtipo miofascial y en condiciones de mordida variables <sup class="cita">6</sup>; el de Antczak, con 45 pacientes y 30 controles bajo criterios DC/TMD, no encontró diferencias significativas globales en el centro de presiones, y el único factor que movía el balanceo era el cierre de ojos <sup class="cita">7</sup>. Muestras pequeñas, criterios diagnósticos y plataformas distintas, y un fenómeno probablemente confinado a subtipos: terreno abonado para resultados aparentemente opuestos que, leídos juntos, apuntan a un efecto pequeño y condicionado más que a su ausencia.</p>
+      <h3><span class="num">4.5</span>Postura craneocervical, bruxismo y maloclusión</h3>
+      <p>Un eslabón intermedio frecuente es la postura de la cabeza y el cuello, anatómicamente contigua al sistema estomatognático. Un metaanálisis reciente asocia el bruxismo con un posicionamiento anterior de la columna cervical y cambios en la postura de la cabeza, con baja heterogeneidad y bajo riesgo de sesgo en los parámetros analizados <sup class="cita">11</sup>. En cambio, las revisiones sobre la asociación entre postura craneocervical y maloclusiones concluyen que la evidencia es escasa y metodológicamente heterogénea, sin permitir afirmar una relación robusta <sup class="cita">12</sup>. La revisión integradora de Cuccia y Caradonna ya advertía que, pese a las numerosas conexiones anatómicas, la demostración concluyente de la influencia trigeminal sobre la postura corporal seguía pendiente <sup class="cita">1</sup>.</p>
+      <h3><span class="num">4.6</span>Síntesis crítica del estado de la evidencia</h3>
+      <p>Reuniendo todo, emerge un patrón coherente en su incoherencia aparente. Primero, las manipulaciones que tocan directamente el canal aferente —anestesia <sup class="cita">2</sup>, férula oclusal <sup class="cita">5</sup>— tienden a producir efectos detectables, lo que apoya la realidad de la vía. Segundo, los efectos aparecen o se amplifican bajo perturbación, ojos cerrados o tareas exigentes <sup class="cita">3</sup><sup class="cita">5</sup>, y tienden a desvanecerse en condiciones fáciles <sup class="cita">7</sup>. Tercero, dependen del subtipo clínico (musculares más que articulares) <sup class="cita">6</sup>. Cuarto, las manipulaciones que mezclan motor y aferencia (apretamiento) dan resultados inconsistentes, contaminados por atención y aprendizaje <sup class="cita">8</sup><sup class="cita">9</sup><sup class="cita">10</sup>. La conclusión razonable no es «<em>el trigémino no importa</em>» ni «<em>el trigémino gobierna la postura</em>», sino que su contribución es pequeña, no lineal y dependiente del contexto —justo lo que esperaríamos de un canal cuyo peso se repondera dinámicamente—.</p>
+      <p>Tabla 1. Síntesis de la evidencia revisada.</p>
+      <p>Manipulación</p>
+      <p>Estudios</p>
+      <p>Hallazgo</p>
+      <p>Dirección</p>
+      <p>Anestesia trigeminal</p>
+      <p>Gangloff 2002 <sup class="cita">2</sup></p>
+      <p>Modifica el control postural ortostático</p>
+      <p>Efecto</p>
+      <p>Férula / oclusión</p>
+      <p>El Zoghbi 2021 <sup class="cita">5</sup>; Julià-Sánchez 2019 <sup class="cita">3</sup></p>
+      <p>Reduce balanceo, sobre todo ojos cerrados y bajo perturbación</p>
+      <p>Efecto (contexto)</p>
+      <p>Apretamiento mandibular</p>
+      <p>Fadillioglu 2024 <sup class="cita">8</sup>; 2023 <sup class="cita">9</sup>; Ringhof 2016 <sup class="cita">10</sup></p>
+      <p>Facilitación en estado estacionario; nulo en reactivo/recuperación</p>
+      <p>Mixto</p>
+      <p>TTM vs. control</p>
+      <p>Dolina 2024 <sup class="cita">6</sup>; Antczak 2025 <sup class="cita">7</sup></p>
+      <p>Efecto en subtipo miofascial; nulo global</p>
+      <p>Contradictorio</p>
+      <p>Bruxismo / craneocervical</p>
+      <p>Solanke 2025 <sup class="cita">11</sup>; Ramírez 2021 <sup class="cita">12</sup></p>
+      <p>Asociación cervical sí; maloclusión-postura débil</p>
+      <p>Heterogéneo</p>
+      <h2><span class="num">5</span>Por qué la evidencia es ambigua: diagnóstico metodológico</h2>
+      <p>La heterogeneidad no es solo mala suerte; tiene causas identificables que cualquier programa futuro debe corregir.</p>
+      <p>Dependencia del contexto no controlada. Si el peso trigeminal sube bajo perturbación <sup class="cita">3</sup><sup class="cita">18</sup>, medir en posturografía estática cómoda subestima sistemáticamente el efecto. Muchos estudios negativos lo son por diseño, no por ausencia de fenómeno.</p>
+      <p>Ausencia del eslabón aferente. Casi ningún estudio demuestra que su manipulación cambió realmente el tráfico aferente trigeminal; se infiere. Sin ese eslabón, una correlación intervención-postura no distingue mecanismo de artefacto.</p>
+      <p>Heterogeneidad de medida. Áreas y longitudes del centro de presiones, distintas plataformas, distintos protocolos visuales: las métricas no son comparables entre estudios, y la del centro de presiones es ciega a la coordinación entre segmentos.</p>
+      <p>Mezcla de aferente y eferente. El apretamiento añade actividad motora, atención y aprendizaje <sup class="cita">9</sup><sup class="cita">10</sup>, confundiendo la lectura propioceptiva pura.</p>
+      <p>Agrupación entre sujetos y muestras pequeñas. Promediar sujetos con pesos sensoriales distintos diluye o falsea los efectos; las muestras reducidas carecen de potencia para efectos pequeños.</p>
+      <p>Estos cinco problemas comparten una raíz conceptual: se ha tratado el trigémino como una causa con un efecto medio fijo, cuando se comporta como un parámetro cuya influencia depende del estado del sistema. De ahí la propuesta de la sección siguiente.</p>
+      <h2><span class="num">6</span>Una hipótesis dinámica: el trigémino como parámetro de control</h2>
+      <h3><span class="num">6.1</span>De «¿influye?» a «¿qué mueve en la dinámica?»</h3>
+      <p>El control postural admite una descripción como sistema dinámico de baja dimensión efectiva. En la tradición de la dinámica de coordinación, la postura erguida durante una tarea suprapostural puede describirse por la fase relativa entre las rotaciones de tobillo y cadera, que actúa como parámetro de orden y exhibe modos discretos (en-fase y anti-fase) y transiciones entre ellos al variar las restricciones de la tarea; estos modos se interpretan como fenómenos emergentes de autoorganización <sup class="cita">21</sup>. Las transiciones entre modos tienen las propiedades de una transición de fase: histéresis, biestabilidad y, cerca del umbral, firmas anticipatorias como el enlentecimiento crítico y el aumento de las fluctuaciones <sup class="cita">22</sup>. Reformular la pregunta en este marco la transforma: ya no preguntamos si el trigémino «<em>mejora</em>» la postura, sino qué variable de la dinámica modifica.</p>
+      <h3><span class="num">6.2</span>El trigémino como modulador del acoplamiento, no como pulso</h3>
+      <p>La hipótesis central es que la aferencia trigeminal funciona como un parámetro de control: modula la ganancia con la que una entrada sensorial se acopla al controlador postural. No inyecta un estado nuevo (como haría un pulso vibratorio) ni impone una tarea (como el apretamiento): cambia las propiedades de transferencia del canal. Bajo esta lectura, las observaciones dispersas de la sección 4 se ordenan: un cambio de ganancia produce efectos pequeños en condiciones fáciles, efectos mayores cuando el sistema se acerca a un régimen inestable (perturbación, ojos cerrados), y dependientes del estado basal del sujeto —exactamente el perfil empírico observado—.</p>
+      <p>Formalmente, puede partirse de la dinámica estocástica de la fase relativa φ entre tobillo y cadera:</p>
+      <p></p>
+      <p class="formula">dφ/dt = −∂V(φ)/∂φ + √Q · ξ(t)<br><span>V(φ) = −a·cos(φ) − b·cos(2φ)</span></p>
+      <p></p>
+      <p>donde el cociente b/a (ligado a la frecuencia o dificultad de la tarea) actúa como parámetro de control y Q es la intensidad del ruido. La pregunta se concreta entonces en una sola cuestión decidible: ¿sobre qué variable del modelo actúa el trigémino? Tres modelos rivales predicen firmas distintas:</p>
+      <p>Modelo A — el trigémino desplaza b/a (parámetro de control). Mueve el umbral de la transición e induce enlentecimiento crítico antes. Firma: cambio del punto de bifurcación y del tiempo de relajación.</p>
+      <p>Modelo B — el trigémino cambia Q (intensidad del ruido). Altera las fluctuaciones sin desplazar el umbral determinista. Firma: cambio de varianza, no de umbral.</p>
+      <p>Modelo C — el trigémino deforma el potencial. Modifica la profundidad relativa de los mínimos y, con ella, la histéresis. Firma: cambio en la amplitud del ciclo de histéresis.</p>
+      <p>Discriminar entre A, B y C mediante selección de modelos sobre datos individuales es justo lo que convierte una intuición clínica en un programa experimental decidible, y lo que la literatura revisada nunca ha intentado.</p>
+      <h3><span class="num">6.3</span>La vía de entrada: la calidad mecánica del entorno perineural</h3>
+      <p>¿Cómo modular esa ganancia de forma graduable y reversible? Proponemos actuar sobre la calidad mecánica (viscoelástica) del entorno de las emergencias del trigémino y de sus anastomosis. La plausibilidad se apoya en dos cuerpos de evidencia. Primero, el microentorno biomecánico del nervio periférico modula su función y señalización: la mecánica del tejido circundante no es inerte respecto a la transducción <sup class="cita">17</sup>. Segundo, la movilidad y rigidez del tejido conectivo (fascia) participan en la propiocepción, y su alteración se asocia a propiocepción anómala <sup class="cita">16</sup>. En términos del modelo, manipular la viscoelasticidad perineural equivaldría a girar el dial de la ganancia aferente desde fuera del bucle locomotor, sin tocar tobillos ni ojos. La topología de las anastomosis añade un matiz atractivo: manipular su entorno mecánico es, en efecto, modular la conectividad efectiva de la entrada.</p>
+      <p>Cautela. Esta vía es una hipótesis (confianza especulativa). «<em>Calidad elástica</em>» es difícil de medir y estandarizar, y la evidencia directa de que una manipulación perineural cambia el tráfico trigeminal y, en cascada, la dinámica postural, aún no existe. Por eso la propuesta exige instrumentar la cadena causal.</p>
+      <h3><span class="num">6.4</span>Predicciones falsables y diseño de la cadena de tres eslabones</h3>
+      <p>La hipótesis se vuelve ciencia, y no metáfora, al especificar predicciones que la puedan refutar y un diseño que las ponga a prueba.</p>
+      <p>Eslabón 1 — Manipulación medida: cuantificar la calidad elástica del tejido perineural como variable continua (p. ej., elastografía por ondas de cizalla), no como «<em>se aplicó una técnica</em>».</p>
+      <p>Eslabón 2 — Cambio aferente verificado: demostrar que la manipulación alteró el tráfico trigeminal con un lector neurofisiológico independiente (reflejo de parpadeo R1/R2, reflejo inhibitorio del masetero o potenciales evocados somatosensoriales trigeminales). Es el eslabón que la literatura omite y el que distingue mecanismo de correlación.</p>
+      <p>Eslabón 3 — Cambio dinámico: medir si la manipulación desplaza el umbral de la transición postural y modifica los indicadores críticos (tiempo de relajación, varianza y autocorrelación de la fase relativa).</p>
+      <p>Predicción discriminante. Si el trigémino es un parámetro de control, su manipulación cambiará los indicadores críticos y el umbral de transición, no solo la amplitud del balanceo. Si solo añade ruido, cambiará la varianza sin desplazar el umbral. Si es irrelevante para el régimen dinámico, ninguna manipulación craneomandibular moverá esos indicadores —la hipótesis nula que el diseño debe poder perder—.</p>
+      <p>Predicción de contexto. El efecto trigeminal crecerá con la dificultad de la tarea (mayor bajo perturbación o con canales dominantes degradados), en coherencia con la reponderación dependiente del contexto <sup class="cita">3</sup><sup class="cita">18</sup><sup class="cita">20</sup>. Esta predicción explica retrospectivamente por qué los estudios en posturografía estática cómoda tienden al resultado nulo <sup class="cita">7</sup>.</p>
+      <p>Tabla 2. Matriz de predicciones del modelo dinámico.</p>
+      <p>Resultado observado tras la manipulación</p>
+      <p>Interpretación</p>
+      <p>Modelo</p>
+      <p>Adelanta el enlentecimiento crítico y desplaza el umbral de transición</p>
+      <p>El trigémino es parámetro de control</p>
+      <p>Modelo A</p>
+      <p>Cambia la varianza pero no el umbral ni el tiempo de relajación</p>
+      <p>El trigémino solo modula el ruido</p>
+      <p>Modelo B</p>
+      <p>Cambia la amplitud de la histéresis</p>
+      <p>El trigémino deforma el potencial</p>
+      <p>Modelo C</p>
+      <p>El efecto crece con la dificultad / perturbación de la tarea</p>
+      <p>Reponderación dependiente del contexto</p>
+      <p>A, contexto</p>
+      <p>Ninguna manipulación mueve los indicadores dinámicos</p>
+      <p>El trigémino es irrelevante para el régimen postural</p>
+      <p>Hipótesis nula</p>
+      <h3><span class="num">6.5</span>Conexión con la criticalidad (apunte a un programa mayor)</h3>
+      <p>La reformulación abre una pregunta de mayor alcance: si la postura realiza transiciones críticas y un canal aferente puede sintonizar su proximidad al punto crítico, ¿opera el sistema postural cerca de un régimen crítico porque está sintonizado allí o porque se autoorganiza hacia él? La distinción —criticalidad sintonizada frente a autoorganizada— conecta el estudio de la postura con la teoría general de las transiciones críticas y los sistemas al borde del caos <sup class="cita">22</sup><sup class="cita">23</sup><sup class="cita">25</sup>, y excede el alcance de esta revisión; se señala aquí porque dota al programa trigémino-postural de una relevancia teórica que trasciende la clínica.</p>
+      <h2><span class="num">7</span>Implicaciones clínicas y traslacionales</h2>
+      <p>Aun en su forma actual, la hipótesis tiene lecturas clínicas. Si ciertos trastornos craneomandibulares alteran la ganancia de un canal postural, encajarían mejor como cambios de régimen dinámico que como lesiones estáticas, lo que reorientaría su evaluación —de la imagen estructural hacia la dinámica del balanceo bajo perturbación—. El hallazgo de que solo los subtipos miofasciales de TTM alteran el equilibrio <sup class="cita">6</sup> sugiere que el factor muscular (y su propiocepción) pesa más que el articular. La mejora postural con férulas en pacientes con TTM <sup class="cita">5</sup> sería, en esta lectura, un reajuste de ganancia más que una corrección mecánica. Finalmente, en poblaciones con reponderación alterada, como la enfermedad de Parkinson <sup class="cita">20</sup>, el canal trigeminal podría representar una vía de entrada terapéutica poco explorada para modular la estabilidad. Todas estas lecturas son hipótesis de trabajo y requieren la verificación de la cadena causal antes de cualquier traslación.</p>
+      <h2><span class="num">8</span>Limitaciones y agenda de investigación</h2>
+      <p>Esta revisión es narrativa, no sistemática: no aplica un protocolo PRISMA ni una evaluación cuantitativa del riesgo de sesgo, y selecciona la literatura para construir un argumento; debe leerse como síntesis orientada a hipótesis, no como evidencia de nivel agregado. La hipótesis dinámica, por su parte, está sin contrastar: la vía de la calidad elástica perineural es especulativa y su operacionalización (elastografía, lectores aferentes) está por validar en este contexto. La agenda que se desprende es clara: (i) estandarizar la manipulación trigeminal y medirla como variable continua; (ii) incorporar siempre un lector aferente que cierre la cadena causal; (iii) medir bajo perturbación y con métricas de coordinación (fase relativa), no solo del centro de presiones en estática; (iv) analizar por sujeto y con potencia suficiente; y (v) buscar las firmas críticas y su desplazamiento por la manipulación. Un programa así podría convertir tres décadas de resultados ambiguos en una respuesta mecanística.</p>
+      <h2><span class="num">9</span>Conclusión</h2>
+      <p>El trigémino es una aferencia real y anatómicamente bien conectada con los circuitos del control postural, pero su efecto sobre la postura ha resistido una caracterización clara durante décadas. Esta revisión sostiene que la causa de esa resistencia es conceptual: se ha buscado un efecto causal fijo donde hay un parámetro de control dependiente del estado. Reinterpretar el trigémino como modulador de la ganancia de acoplamiento de un canal sensorial —y estudiarlo con el lenguaje de la dinámica de coordinación y las transiciones críticas— ordena la evidencia dispersa, explica sus contradicciones y, sobre todo, genera predicciones falsables y un diseño con una cadena causal de tres eslabones capaz de zanjar la cuestión. La mandíbula y la postura quizá no estén unidas por una palanca biomecánica, sino por un dial sensorial cuya posición importa cuando el sistema se acerca a su límite de estabilidad.</p>
+    </div>
+
+    <section>
+      <h2 class="sin-num">Bibliografía</h2>
+      <p style="font-size:.95rem;color:var(--texto-tenue)">Referencias verificadas mediante búsqueda bibliográfica (enlace directo). Las obras canónicas de modelado (HKB 1985; Bardy et al. 2002; Bak et al. 1987; Scheffer et al. 2009; Clauset et al. 2009) se citan por su referencia estándar y deben cotejarse en su edición original.</p>
+      <ol class="refs">
+        <li id="r1">The Relationship Between the Stomatognathic System and Body Posture (Cuccia &amp; Caradonna, 2009, Clinics). <a href="https://consensus.app/papers/details/4b21b28cb435569fba28462f0e242ce0/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r2">Unilateral trigeminal anaesthesia modifies postural control in human subjects (Gangloff et al., 2002, Neuroscience Letters). <a href="https://consensus.app/papers/details/47b9952d14ea5b5fbd5f714b70e5b149/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r3">Dental occlusion and body balance: A question of environmental constraints? (Julià-Sánchez et al., 2019, Journal of Oral Rehabilitation). <a href="https://consensus.app/papers/details/595422a2527b5a8889107a891ce87415/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r4">Relationship between occlusion and posture (systematic review) (Omar et al., 2023, Int. J. Health Sciences). <a href="https://consensus.app/papers/details/7a31363cff095f4eae3de7353c079c6a/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r5">Effect of Occlusal Splints on Posture Balance in Patients with TMJ Disorder (El Zoghbi et al., 2021, J. Contemporary Dental Practice). <a href="https://consensus.app/papers/details/22ad248442925324bf70f297b13fa899/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r6">The impact of various subtypes of temporomandibular disorders on body balance (Dolina et al., 2024, Gait &amp; Posture). <a href="https://consensus.app/papers/details/23f3260c04e9539c806a5ce54b63324e/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r7">The Role of Posturography in the Diagnosis of TMD and Their Impact on Body Posture (Antczak et al., 2025, Biomedicines). <a href="https://consensus.app/papers/details/9c07f076d04050ab911632d573039a98/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r8">Persisting effects of jaw clenching on dynamic steady-state balance (Fadillioglu et al., 2024, PLOS ONE). <a href="https://consensus.app/papers/details/e89b6493db845b5381e8fcc22f3ef35e/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r9">Effects of jaw clenching on dynamic reactive balance task performance (Fadillioglu et al., 2023, Frontiers in Neurology). <a href="https://consensus.app/papers/details/d63d62dad5de543a8747fba4e0949fab/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r10">Effect of Jaw Clenching on Balance Recovery after Forward Loss of Balance (Ringhof et al., 2016, Frontiers in Psychology). <a href="https://consensus.app/papers/details/9853300887975ac19f76423d51ed0376/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r11">Association between Bruxism and Cervical Spine Position: Systematic Review and Meta-analysis (Solanke et al., 2025, Int. J. Clinical Pediatric Dentistry). <a href="https://consensus.app/papers/details/b5fdce99c0af5f908fe6547e6c50d585/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r12">Asociacion entre postura craneo cervical y maloclusiones: una revision (Ramirez Velasquez et al., 2021, Kiru). <a href="https://consensus.app/papers/details/66ec5531d3c15ae891a8449af044e5a1/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r13">Molecular and developmental insights into proprioceptive identity in the mesencephalic trigeminal nucleus (Lee et al., 2026, Frontiers in Cellular Neuroscience). <a href="https://consensus.app/papers/details/19251a9bdfd953079390d87ff6b9f94e/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r14">Projection and synaptic connectivity of trigeminal mesencephalic nucleus neurons controlling jaw reflexes (Yoshida et al., 2017, Journal of Oral Science). <a href="https://consensus.app/papers/details/70460c60efe058f1b49b12b2cbb54ce8/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r15">The mesencephalic trigeminal neuron: electrophysiological insights into function and dysfunction (Seki et al., 2026, Frontiers in Cellular Neuroscience). <a href="https://consensus.app/papers/details/fd635fa90b7052099fd151f7bcceb4f1/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r16">Fascia Mobility, Proprioception, and Myofascial Pain (Langevin, 2021, Life). <a href="https://consensus.app/papers/details/89e162cbfcfa51f48c5b315f2e7e62bd/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r17">Biomechanical microenvironment in peripheral nerve regeneration (Kong et al., 2022, Theranostics). <a href="https://consensus.app/papers/details/3502aab68331542ca015a53b9982a14f/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r18">Sensory reweighting dynamics in human postural control (Aslander &amp; Peterka, 2014, Journal of Neurophysiology). <a href="https://consensus.app/papers/details/115b126b7e0957bb80ba84b9f91a79a9/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r19">Velocity dependence of sensory reweighting in human balance control (Missen et al., 2024, Journal of Neurophysiology). <a href="https://consensus.app/papers/details/a5a3bc4760d65016bf3e02097820a047/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r20">Sensory Re-weighting for Postural Control in Parkinson disease (Feller et al., 2019, Frontiers in Human Neuroscience). <a href="https://consensus.app/papers/details/03993db50d2059e4ad1ef56627a1be24/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r21">Postural coordination modes considered as emergent phenomena (Bardy et al., 1999, JEP:HPP). <a href="https://consensus.app/papers/details/b534f9e7611a5ac8b4e76cf3358623c0/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r22">Instabilities and Phase Transitions in Human Brain and Behavior (Kelso, 2010, Frontiers in Human Neuroscience). <a href="https://consensus.app/papers/details/93f8d17eff615d8e8644dbd92bb1a42e/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r23">Deep learning for early warning signals of tipping points (Bury et al., 2021, PNAS). <a href="https://consensus.app/papers/details/efe7070378a054608ca7edeea5cb2064/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r24">Anticipating critical transitions using early warning signals (limitations) (Dablander et al., 2020, Psychological Methods). <a href="https://consensus.app/papers/details/dafa9e2a38275076a7bd9e20a21ae2b5/" target="_blank" rel="noopener">ver referencia</a></li>
+        <li id="r25">Self-Organized Criticality in the Brain (Plenz et al., 2021). <a href="https://consensus.app/papers/details/9f71587e82f95f768b067812369f30b9/" target="_blank" rel="noopener">ver referencia</a></li>
+      </ol>
+    </section>
+
+    <div class="llamada">
+      <h2>Los ensayos desarrollan esto sin prisa</h2>
+      <p>Cada texto toma una pieza del programa y la trabaja entera. Se publican en Substack y
+      llegan por correo a quien los haya pedido.</p>
+      <a class="boton" href="/#suscribir">Recibir los ensayos</a>
+    </div>
+
+  </div>
+</main>
+
+<div data-pie></div>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
