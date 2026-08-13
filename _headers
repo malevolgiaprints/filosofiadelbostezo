@@ -1,5 +1,17 @@
-/assets/*
-  Cache-Control: public, max-age=604800
+# Reglas de caché.
+#
+# OJO: assets/site.js y assets/base.css NO llevan versión en el nombre.
+# Si se les da caché larga, un navegador que ya ha visitado el sitio se queda
+# con el menú y los estilos viejos durante días, aunque publiquemos algo nuevo.
+# Por eso revalidan siempre: el ETag hace que la comprobación sea barata
+# (respuesta 304, sin descarga) y los cambios se ven al instante.
 
+/assets/*.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Las imágenes sí pueden cachearse: si cambia una, cambia su nombre.
 /assets/img/*
   Cache-Control: public, max-age=2592000
