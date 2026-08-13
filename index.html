@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La filosofía del bostezo — Pensamiento profundo sobre lo vivo</title>
+<meta name="description" content="Una marca personal dedicada a explorar la complejidad biológica: emergencia, criticalidad, estructuras disipativas y el caos como generador de orden.">
+<meta name="theme-color" content="#1E2A44">
+<meta property="og:title" content="La filosofía del bostezo">
+<meta property="og:description" content="Pensamiento profundo sobre lo vivo. En la intersección entre la ciencia, la filosofía de la biología y la práctica clínica.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://filosofiadelbostezo.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Joseph Ducreux, Autorretrato bostezando, h. 1783">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://filosofiadelbostezo.com/">
+<link rel="canonical" href="https://filosofiadelbostezo.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   La filosofía del bostezo — Landing
+   Versión R4 · Nocturno (Manual de Identidad Visual, 2026)
+   Paleta: Azul Noche #1E2A44 · Marfil #F6F1E8 · Verde Profundo #3F5A4B
+           Pizarra #2F3A3D · Dorado Suave #C8A96B
+   ============================================================ */
+:root{
+  --noche:#1E2A44;
+  --noche-900:#162034;
+  --noche-700:#243354;
+  --marfil:#F6F1E8;
+  --verde:#3F5A4B;
+  --pizarra:#2F3A3D;
+  --dorado:#C8A96B;
+
+  --texto:#F6F1E8;
+  --texto-suave:rgba(246,241,232,.72);
+  --texto-tenue:rgba(246,241,232,.52);
+  --linea:rgba(246,241,232,.14);
+
+  --serif:'Lora','Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --sans:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+  --ancho:1180px;
+  --r:14px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--noche);
+  color:var(--texto);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:clamp(16px,.55vw + 15px,18px);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+
+/* --- Base tipográfica ------------------------------------- */
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.14;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.7rem,7.2vw,5.2rem);letter-spacing:-.025em}
+h2{font-size:clamp(1.9rem,3.6vw,3rem)}
+h3{font-size:clamp(1.15rem,1.5vw,1.4rem)}
+p{margin:0 0 1.1em}
+p:last-child{margin-bottom:0}
+em{font-style:italic}
+.italica{font-family:var(--serif);font-style:italic;font-weight:500}
+.oro{color:var(--dorado)}
+
+.etiqueta{
+  font-family:var(--sans);font-weight:600;
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--dorado);margin:0 0 1.4rem;display:block;
+}
+.entradilla{font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--texto-suave);max-width:62ch}
+
+/* --- Layout ------------------------------------------------ */
+.env{width:100%;max-width:var(--ancho);margin-inline:auto;padding-inline:clamp(20px,5vw,40px)}
+section{position:relative}
+.bloque{padding-block:clamp(72px,10vw,132px)}
+.regla{height:1px;background:var(--linea);border:0;margin:0}
+
+/* --- Accesibilidad ----------------------------------------- */
+.salto{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--dorado);color:var(--noche);padding:.7rem 1.2rem;border-radius:0 0 8px 0;
+  font-weight:600;
+}
+.salto:focus{left:0}
+:focus-visible{outline:2px solid var(--dorado);outline-offset:3px;border-radius:4px}
+
+/* --- Isotipo ----------------------------------------------- */
+.iso{overflow:visible;color:var(--marfil);stroke-width:2.8}
+.iso .nucleo{color:var(--dorado)}
+.iso use{color:inherit}
+
+/* --- Navegación -------------------------------------------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(30,42,68,.72);
+  backdrop-filter:saturate(150%) blur(14px);
+  -webkit-backdrop-filter:saturate(150%) blur(14px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s var(--ease),background .4s var(--ease);
+}
+.nav.fija{border-bottom-color:var(--linea);background:rgba(22,32,52,.86)}
+.nav-int{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:74px}
+.marca{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0}
+.marca .iso{width:36px;height:36px;stroke-width:8}
+.marca-txt{font-family:var(--serif);font-size:1.02rem;line-height:1.1;letter-spacing:.005em}
+.marca-txt span{display:block;font-style:italic;color:var(--dorado);font-size:.95em}
+.menu{display:flex;align-items:center;gap:2rem;list-style:none;margin:0;padding:0}
+.menu a{
+  text-decoration:none;font-size:.9rem;letter-spacing:.02em;color:var(--texto-suave);
+  padding-block:.4rem;position:relative;transition:color .3s var(--ease);
+}
+.menu a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--dorado);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.menu a:hover{color:var(--marfil)}
+.menu a:hover::after{transform:scaleX(1)}
+.nav .btn{padding:.55rem 1.15rem;font-size:.85rem}
+.nav-cta .corto{display:none}
+@media(max-width:840px){.menu{display:none}}
+@media(max-width:560px){
+  .nav-cta .largo{display:none}
+  .nav-cta .corto{display:inline}
+  .nav .btn{padding:.5rem 1.05rem;font-size:.82rem}
+  .marca-txt{font-size:.94rem}
+}
+
+/* --- Botones ----------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--sans);font-weight:600;font-size:.92rem;letter-spacing:.03em;
+  text-decoration:none;border:1px solid var(--dorado);border-radius:999px;
+  padding:.85rem 1.7rem;cursor:pointer;background:transparent;color:var(--dorado);
+  transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease);
+}
+.btn:hover{background:var(--dorado);color:var(--noche);transform:translateY(-2px)}
+.btn-solido{background:var(--dorado);color:var(--noche)}
+.btn-solido:hover{background:var(--marfil);border-color:var(--marfil)}
+.btn-fantasma{border-color:var(--linea);color:var(--texto-suave)}
+.btn-fantasma:hover{background:transparent;border-color:var(--marfil);color:var(--marfil)}
+.btn svg{width:15px;height:15px;flex:none}
+
+/* --- Hero -------------------------------------------------- */
+.hero{position:relative;overflow:hidden;padding-block:clamp(72px,12vw,132px) clamp(64px,9vw,110px)}
+.hero-fondo{position:absolute;inset:0;pointer-events:none;z-index:0}
+.hero-fondo .campo{
+  position:absolute;left:50%;top:46%;width:min(150vw,1500px);aspect-ratio:1;
+  transform:translate(-50%,-50%);
+}
+.hero-fondo .campo{color:var(--marfil);stroke-width:.16;opacity:.5}
+.hero-fondo::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(64% 56% at 50% 42%,rgba(63,90,75,.26),transparent 74%),
+             linear-gradient(180deg,rgba(30,42,68,0) 40%,var(--noche) 92%);
+}
+.hero-int{position:relative;z-index:1;display:grid;justify-items:center;text-align:center}
+.hero .iso-grande{width:clamp(88px,13vw,124px);height:auto;margin-bottom:clamp(28px,4vw,44px)}
+.hero h1{max-width:16ch}
+.hero h1 .segunda{display:block;font-style:italic;color:var(--dorado)}
+.hero-sub{
+  margin-top:1.6rem;max-width:58ch;font-size:clamp(1.05rem,1.6vw,1.32rem);
+  color:var(--texto-suave);line-height:1.65;
+}
+.hero-cita{margin:clamp(1.8rem,3vw,2.6rem) 0 0;max-width:44ch;text-align:center}
+.hero-cita blockquote{
+  margin:0;font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(1.12rem,1.75vw,1.42rem);line-height:1.5;color:var(--marfil);
+  position:relative;padding-top:1.6rem;
+}
+.hero-cita blockquote::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:34px;height:1px;background:var(--dorado);opacity:.7;
+}
+.hero-cita figcaption{
+  margin-top:1.1rem;font-family:var(--sans);font-size:.74rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--dorado);
+}
+.hero-cita cite{font-style:italic;text-transform:none;letter-spacing:.06em;font-weight:400}
+.hero-acciones{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2.4rem}
+.hero-pie{
+  margin-top:clamp(48px,7vw,76px);padding-top:1.6rem;border-top:1px solid var(--linea);
+  width:100%;display:flex;flex-wrap:wrap;gap:1rem 2.4rem;justify-content:center;
+  font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--texto-tenue);
+}
+.hero-pie span{display:inline-flex;align-items:center;gap:.55rem}
+.hero-pie span::before{content:"";width:5px;height:5px;background:var(--dorado);border-radius:50%;flex:none}
+
+/* --- Manifiesto -------------------------------------------- */
+.manifiesto{background:var(--noche-900)}
+.manifiesto-rej{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,80px);align-items:start}
+.manifiesto-rej.con-cuadro{grid-template-columns:.95fr .8fr 1fr;align-items:start}
+@media(max-width:1000px){.manifiesto-rej.con-cuadro{grid-template-columns:1fr 1fr}
+  .manifiesto-rej.con-cuadro .cuadro{grid-row:1/3;grid-column:2}}
+@media(max-width:700px){.manifiesto-rej.con-cuadro{grid-template-columns:1fr}
+  .manifiesto-rej.con-cuadro .cuadro{grid-row:auto;grid-column:auto}}
+.cuadro{margin:0}
+.cuadro img{width:100%;height:auto;border-radius:var(--r);display:block;
+  border:1px solid var(--linea);background:var(--noche-900)}
+.cuadro figcaption{margin-top:.9rem;font-size:.78rem;line-height:1.5;color:var(--texto-tenue)}
+.cuadro figcaption cite{font-style:italic}
+.cuadro figcaption span{display:block;color:var(--dorado);opacity:.8;
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem}
+@media(max-width:860px){.manifiesto-rej{grid-template-columns:1fr}}
+.cita{
+  font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.42;
+  color:var(--marfil);margin:0;
+}
+.cita .destacado{color:var(--dorado);font-style:italic}
+.manifiesto-txt p{color:var(--texto-suave)}
+.manifiesto-txt p + p{margin-top:1.2rem}
+
+/* --- Valores ----------------------------------------------- */
+.valores-rej{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linea);
+  border-block:1px solid var(--linea);margin-top:clamp(38px,5vw,56px)}
+@media(max-width:900px){.valores-rej{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.valores-rej{grid-template-columns:1fr}}
+.valor{background:var(--noche);padding:clamp(26px,3.2vw,38px) clamp(22px,2.4vw,30px);
+  transition:background .45s var(--ease)}
+.valor:hover{background:var(--noche-700)}
+.valor .num{font-family:var(--serif);font-size:.85rem;color:var(--dorado);letter-spacing:.1em;display:block;margin-bottom:1.4rem}
+.valor h3{margin-bottom:.7rem}
+.valor p{font-size:.94rem;color:var(--texto-tenue);line-height:1.6}
+
+/* --- Ejes -------------------------------------------------- */
+.ejes{background:var(--noche-900)}
+.ejes-cab{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:clamp(38px,5vw,58px)}
+@media(max-width:760px){.ejes-cab{grid-template-columns:1fr;align-items:start}}
+.ejes-rej{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,2vw,24px)}
+.eje{
+  position:relative;padding:clamp(26px,3vw,34px);border:1px solid var(--linea);border-radius:var(--r);
+  background:linear-gradient(160deg,rgba(63,90,75,.22),rgba(47,58,61,.10));
+  overflow:hidden;transition:border-color .45s var(--ease),transform .45s var(--ease);
+}
+.eje:hover{border-color:rgba(200,169,107,.5);transform:translateY(-4px)}
+.eje-marca{width:52px;height:52px;margin-bottom:1.5rem}
+.eje-marca *{fill:none;stroke:var(--dorado);stroke-width:1.4}
+.eje h3{margin-bottom:.6rem}
+.espera{max-width:62ch}
+.eje p{font-size:.93rem;color:var(--texto-tenue);line-height:1.6}
+.remate{
+  margin:clamp(38px,5vw,58px) auto 0;max-width:26ch;text-align:center;
+  font-family:var(--serif);font-size:clamp(1.3rem,2.4vw,1.8rem);line-height:1.4;
+  color:var(--marfil);position:relative;padding-top:2.2rem;
+}
+.remate::before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:34px;height:1px;background:var(--dorado);opacity:.75;
+}
+.eje .nota{margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--linea);
+  font-size:.82rem;color:var(--dorado);opacity:.85;line-height:1.5}
+.cautela{max-width:60ch;margin:clamp(32px,4vw,46px) 0 0;font-size:.95rem;
+  color:var(--texto-tenue);border-left:1px solid var(--linea);padding-left:1.3rem}
+.eje .indice{
+  position:absolute;top:clamp(20px,2.4vw,26px);right:clamp(20px,2.4vw,26px);
+  font-family:var(--serif);font-size:.8rem;color:var(--texto-tenue);letter-spacing:.08em;
+}
+
+/* --- Ensayos ----------------------------------------------- */
+.ensayos-rej{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.6vw,32px);
+  margin-top:clamp(38px,5vw,58px)}
+.ensayo{
+  display:flex;flex-direction:column;text-decoration:none;border-radius:var(--r);
+  overflow:hidden;border:1px solid var(--linea);background:var(--noche-900);
+  transition:transform .5s var(--ease),border-color .5s var(--ease);
+}
+.ensayo:hover{transform:translateY(-6px);border-color:rgba(200,169,107,.45)}
+.ensayo-arte{aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--verde)}
+.ensayo-arte svg{position:absolute;inset:0;width:100%;height:100%;
+  transition:transform .8s var(--ease)}
+.ensayo:hover .ensayo-arte svg{transform:scale(1.06)}
+.ensayo-arte .l{fill:none;stroke:var(--marfil);stroke-width:.9;opacity:.55}
+.ensayo-arte .p{fill:var(--dorado)}
+.ensayo-cuerpo{padding:clamp(22px,2.6vw,30px);display:flex;flex-direction:column;gap:.7rem;flex:1}
+.ensayo-meta{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dorado)}
+.ensayo h3{font-size:1.25rem;line-height:1.3}
+.ensayo p{font-size:.93rem;color:var(--texto-tenue);line-height:1.6}
+.ensayo-leer{margin-top:auto;padding-top:.6rem;font-size:.85rem;font-weight:600;color:var(--marfil);
+  display:inline-flex;align-items:center;gap:.5rem}
+.ensayo-leer svg{width:14px;height:14px;transition:transform .4s var(--ease)}
+.ensayo:hover .ensayo-leer svg{transform:translateX(4px)}
+
+/* --- Suscripción ------------------------------------------- */
+.suscribir{position:relative;overflow:hidden;background:var(--verde)}
+.suscribir::before{
+  content:"";position:absolute;right:-14%;top:50%;transform:translateY(-50%);
+  width:min(60vw,620px);aspect-ratio:1;
+  background:radial-gradient(circle,rgba(200,169,107,.20),transparent 62%);
+}
+.suscribir-int{position:relative;z-index:1;max-width:640px}
+.suscribir h2{margin-bottom:1.1rem}
+.suscribir p{color:rgba(246,241,232,.8)}
+.forma{display:flex;gap:.7rem;margin-top:2rem;flex-wrap:wrap}
+.forma input{
+  flex:1 1 260px;background:rgba(22,32,52,.42);border:1px solid rgba(246,241,232,.24);
+  border-radius:999px;padding:.85rem 1.4rem;color:var(--marfil);font-family:var(--sans);
+  font-size:.95rem;transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.forma input::placeholder{color:rgba(246,241,232,.45)}
+.forma input:focus{outline:none;border-color:var(--dorado);background:rgba(22,32,52,.62)}
+.aviso{margin-top:1rem;font-size:.8rem;color:rgba(246,241,232,.6)}
+.gracias{margin-top:1rem;font-size:.92rem;color:var(--marfil);display:none}
+.gracias.visible{display:block}
+
+/* --- Pie --------------------------------------------------- */
+.pie{background:var(--noche-900);padding-block:clamp(52px,6vw,76px) 2rem}
+.pie-rej{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(28px,4vw,56px)}
+@media(max-width:760px){.pie-rej{grid-template-columns:1fr 1fr}.pie-marca{grid-column:1/-1}}
+.pie-marca .marca{margin-bottom:1.2rem}
+.pie-marca p{font-size:.92rem;color:var(--texto-tenue);max-width:38ch}
+.pie h4{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dorado);
+  font-family:var(--sans);font-weight:600;margin-bottom:1.1rem}
+.pie ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.pie ul a{text-decoration:none;font-size:.92rem;color:var(--texto-suave);transition:color .3s var(--ease);word-break:break-word}
+.pie ul a:hover{color:var(--dorado)}
+.pie-base{margin-top:clamp(38px,5vw,58px);padding-top:1.6rem;border-top:1px solid var(--linea);
+  display:flex;flex-wrap:wrap;gap:.8rem 2rem;justify-content:space-between;
+  font-size:.8rem;color:var(--texto-tenue)}
+.paleta{display:flex;gap:.4rem;align-items:center}
+.paleta i{width:14px;height:14px;border-radius:50%;display:block;border:1px solid rgba(246,241,232,.18)}
+
+/* --- Revelado al hacer scroll ------------------------------ */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rev.dentro{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .rev{opacity:1;transform:none}
+}
+</style>
+<link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+
+<a class="salto" href="#principal">Saltar al contenido</a>
+
+<!-- Definición reutilizable del isotipo -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="isotipo-capas" fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path class="capa" opacity=".42" d="M100.0 72.0C101.9 72.0 103.9 72.2 105.8 72.6C107.7 73.0 109.6 73.6 111.4 74.4C113.2 75.2 114.9 76.2 116.5 77.3C118.0 78.5 119.5 79.8 120.8 81.3C122.1 82.7 123.3 84.3 124.2 86.0C125.2 87.7 126.0 89.5 126.6 91.3C127.2 93.2 127.6 95.1 127.8 97.1C128.0 99.0 128.0 101.0 127.8 102.9C127.6 104.9 127.2 106.8 126.6 108.7C126.0 110.5 125.2 112.3 124.2 114.0C123.3 115.7 122.1 117.3 120.8 118.7C119.5 120.2 118.0 121.5 116.5 122.7C114.9 123.8 113.2 124.8 111.4 125.6C109.6 126.4 107.7 127.0 105.8 127.4C103.9 127.8 101.9 128.0 100.0 128.0C98.1 128.0 96.1 127.8 94.2 127.4C92.3 127.0 90.4 126.4 88.6 125.6C86.8 124.8 85.1 123.8 83.5 122.7C82.0 121.5 80.5 120.2 79.2 118.7C77.9 117.3 76.7 115.7 75.8 114.0C74.8 112.3 74.0 110.5 73.4 108.7C72.8 106.8 72.4 104.9 72.2 102.9C72.0 101.0 72.0 99.0 72.2 97.1C72.4 95.1 72.8 93.2 73.4 91.3C74.0 89.5 74.8 87.7 75.8 86.0C76.7 84.3 77.9 82.7 79.2 81.3C80.5 79.8 82.0 78.5 83.5 77.3C85.1 76.2 86.8 75.2 88.6 74.4C90.4 73.6 92.3 73.0 94.2 72.6C96.1 72.2 98.1 72.0 100.0 72.0Z"/>
+      <path class="capa" opacity=".54" d="M100.0 62.0C102.6 62.0 105.3 62.7 107.8 63.3C110.3 64.0 112.8 64.8 115.2 65.9C117.5 67.0 119.8 68.3 121.9 69.8C124.0 71.3 126.0 73.0 127.9 74.9C129.7 76.8 131.6 78.7 132.9 81.0C134.2 83.3 135.0 85.9 135.7 88.4C136.4 90.9 136.9 93.5 137.1 96.1C137.3 98.7 137.3 101.3 137.1 103.9C136.9 106.5 136.4 109.1 135.7 111.6C135.0 114.1 134.2 116.7 132.9 119.0C131.6 121.3 129.7 123.2 127.9 125.1C126.0 127.0 124.0 128.7 121.9 130.2C119.8 131.7 117.5 133.0 115.2 134.1C112.8 135.2 110.3 136.0 107.8 136.7C105.3 137.3 102.6 138.0 100.0 138.0C97.4 138.0 94.7 137.3 92.2 136.7C89.7 136.0 87.2 135.2 84.8 134.1C82.5 133.0 80.2 131.7 78.1 130.2C76.0 128.7 74.0 127.0 72.1 125.1C70.3 123.2 68.4 121.3 67.1 119.0C65.8 116.7 65.0 114.1 64.3 111.6C63.6 109.1 63.1 106.5 62.9 103.9C62.7 101.3 62.7 98.7 62.9 96.1C63.1 93.5 63.6 90.9 64.3 88.4C65.0 85.9 65.8 83.3 67.1 81.0C68.4 78.7 70.3 76.8 72.1 74.9C74.0 73.0 76.0 71.3 78.1 69.8C80.2 68.3 82.5 67.0 84.8 65.9C87.2 64.8 89.7 64.0 92.2 63.3C94.7 62.7 97.4 62.0 100.0 62.0Z"/>
+      <path class="capa" opacity=".66" d="M100.0 52.0C103.2 52.0 106.6 53.4 109.7 54.3C112.8 55.3 115.9 56.5 118.8 57.9C121.7 59.3 124.4 60.9 127.1 62.7C129.8 64.5 132.3 66.5 134.7 68.8C137.1 71.0 140.0 73.2 141.6 76.0C143.2 78.8 143.7 82.4 144.4 85.6C145.1 88.8 145.6 92.0 145.8 95.2C146.1 98.4 146.1 101.6 145.8 104.8C145.6 108.0 145.1 111.2 144.4 114.4C143.7 117.6 143.2 121.2 141.6 124.0C140.0 126.8 137.1 129.0 134.7 131.2C132.3 133.5 129.8 135.5 127.1 137.3C124.4 139.1 121.7 140.7 118.8 142.1C115.9 143.5 112.8 144.7 109.7 145.7C106.6 146.6 103.2 148.0 100.0 148.0C96.8 148.0 93.4 146.6 90.3 145.7C87.2 144.7 84.1 143.5 81.2 142.1C78.3 140.7 75.6 139.1 72.9 137.3C70.2 135.5 67.7 133.5 65.3 131.2C62.9 129.0 60.0 126.8 58.4 124.0C56.8 121.2 56.3 117.6 55.6 114.4C54.9 111.2 54.4 108.0 54.2 104.8C53.9 101.6 53.9 98.4 54.2 95.2C54.4 92.0 54.9 88.8 55.6 85.6C56.3 82.4 56.8 78.8 58.4 76.0C60.0 73.2 62.9 71.0 65.3 68.8C67.7 66.5 70.2 64.5 72.9 62.7C75.6 60.9 78.3 59.3 81.2 57.9C84.1 56.5 87.2 55.3 90.3 54.3C93.4 53.4 96.8 52.0 100.0 52.0Z"/>
+      <path class="capa" opacity=".78" d="M100.0 42.0C103.8 42.0 107.9 44.3 111.5 45.7C115.2 47.1 118.7 48.6 122.1 50.3C125.5 52.1 128.8 53.9 132.0 56.0C135.1 58.1 138.2 60.4 141.2 62.9C144.3 65.4 148.3 67.7 150.2 71.0C152.2 74.3 152.1 79.0 152.8 82.9C153.4 86.7 153.8 90.5 154.1 94.3C154.3 98.1 154.3 101.9 154.1 105.7C153.8 109.5 153.4 113.3 152.8 117.1C152.1 121.0 152.2 125.7 150.2 129.0C148.3 132.3 144.3 134.6 141.2 137.1C138.2 139.6 135.1 141.9 132.0 144.0C128.8 146.1 125.5 147.9 122.1 149.7C118.7 151.4 115.2 152.9 111.5 154.3C107.9 155.7 103.8 158.0 100.0 158.0C96.2 158.0 92.1 155.7 88.5 154.3C84.8 152.9 81.3 151.4 77.9 149.7C74.5 147.9 71.2 146.1 68.0 144.0C64.9 141.9 61.8 139.6 58.8 137.1C55.7 134.6 51.7 132.3 49.8 129.0C47.8 125.7 47.9 121.0 47.2 117.1C46.6 113.3 46.2 109.5 45.9 105.7C45.7 101.9 45.7 98.1 45.9 94.3C46.2 90.5 46.6 86.7 47.2 82.9C47.9 79.0 47.8 74.3 49.8 71.0C51.7 67.7 55.7 65.4 58.8 62.9C61.8 60.4 64.9 58.1 68.0 56.0C71.2 53.9 74.5 52.1 77.9 50.3C81.3 48.6 84.8 47.1 88.5 45.7C92.1 44.3 96.2 42.0 100.0 42.0Z"/>
+      <path class="capa" opacity=".88" d="M100.0 32.0C104.4 32.0 109.1 35.6 113.3 37.4C117.5 39.3 121.4 41.2 125.3 43.2C129.2 45.3 132.8 47.4 136.5 49.7C140.2 52.1 143.8 54.5 147.5 57.2C151.3 59.9 156.7 62.2 158.9 66.0C161.1 69.8 160.3 75.7 160.8 80.2C161.3 84.8 161.6 89.1 161.8 93.5C162.0 97.9 162.0 102.1 161.8 106.5C161.6 110.9 161.3 115.2 160.8 119.8C160.3 124.3 161.1 130.2 158.9 134.0C156.7 137.8 151.3 140.1 147.5 142.8C143.8 145.5 140.2 147.9 136.5 150.3C132.8 152.6 129.2 154.7 125.3 156.8C121.4 158.8 117.5 160.7 113.3 162.6C109.1 164.4 104.4 168.0 100.0 168.0C95.6 168.0 90.9 164.4 86.7 162.6C82.5 160.7 78.6 158.8 74.7 156.8C70.8 154.7 67.2 152.6 63.5 150.3C59.8 147.9 56.2 145.5 52.5 142.8C48.7 140.1 43.3 137.8 41.1 134.0C38.9 130.2 39.7 124.3 39.2 119.8C38.7 115.2 38.4 110.9 38.2 106.5C38.0 102.1 38.0 97.9 38.2 93.5C38.4 89.1 38.7 84.8 39.2 80.2C39.7 75.7 38.9 69.8 41.1 66.0C43.3 62.2 48.7 59.9 52.5 57.2C56.2 54.5 59.8 52.1 63.5 49.7C67.2 47.4 70.8 45.3 74.7 43.2C78.6 41.2 82.5 39.3 86.7 37.4C90.9 35.6 95.6 32.0 100.0 32.0Z"/>
+      <path class="capa" opacity=".95" d="M100.0 22.0C105.0 22.0 110.3 26.9 115.0 29.2C119.8 31.6 124.1 33.8 128.4 36.2C132.7 38.6 136.8 40.9 141.0 43.5C145.3 46.1 149.4 48.7 153.8 51.6C158.2 54.5 165.0 56.7 167.5 61.0C170.1 65.3 168.5 72.4 168.8 77.6C169.1 82.9 169.3 87.8 169.5 92.7C169.6 97.6 169.6 102.4 169.5 107.3C169.3 112.2 169.1 117.1 168.8 122.4C168.5 127.6 170.1 134.7 167.5 139.0C165.0 143.3 158.2 145.5 153.8 148.4C149.4 151.3 145.3 153.9 141.0 156.5C136.8 159.1 132.7 161.4 128.4 163.8C124.1 166.2 119.8 168.4 115.0 170.8C110.3 173.1 105.0 178.0 100.0 178.0C95.0 178.0 89.7 173.1 85.0 170.8C80.2 168.4 75.9 166.2 71.6 163.8C67.3 161.4 63.2 159.1 59.0 156.5C54.7 153.9 50.6 151.3 46.2 148.4C41.8 145.5 35.0 143.3 32.5 139.0C29.9 134.7 31.5 127.6 31.2 122.4C30.9 117.1 30.7 112.2 30.5 107.3C30.4 102.4 30.4 97.6 30.5 92.7C30.7 87.8 30.9 82.9 31.2 77.6C31.5 72.4 29.9 65.3 32.5 61.0C35.0 56.7 41.8 54.5 46.2 51.6C50.6 48.7 54.7 46.1 59.0 43.5C63.2 40.9 67.3 38.6 71.6 36.2C75.9 33.8 80.2 31.6 85.0 29.2C89.7 26.9 95.0 22.0 100.0 22.0Z"/>
+      <path class="capa" opacity="1" d="M100.0 12.0C105.6 12.0 111.6 18.0 116.8 20.8C122.1 23.7 126.8 26.3 131.6 29.0C136.4 31.7 141.0 34.3 145.7 37.1C150.5 39.9 155.1 42.7 160.1 45.9C165.2 49.0 173.4 51.1 176.2 56.0C179.0 60.9 176.8 69.0 177.0 75.0C177.1 81.0 177.3 86.3 177.3 91.9C177.4 97.4 177.4 102.6 177.3 108.1C177.3 113.7 177.1 119.0 177.0 125.0C176.8 131.0 179.0 139.1 176.2 144.0C173.4 148.9 165.2 151.0 160.1 154.1C155.1 157.3 150.5 160.1 145.7 162.9C141.0 165.7 136.4 168.3 131.6 171.0C126.8 173.7 122.1 176.3 116.8 179.2C111.6 182.0 105.6 188.0 100.0 188.0C94.4 188.0 88.4 182.0 83.2 179.2C77.9 176.3 73.2 173.7 68.4 171.0C63.6 168.3 59.0 165.7 54.3 162.9C49.5 160.1 44.9 157.3 39.9 154.1C34.8 151.0 26.6 148.9 23.8 144.0C21.0 139.1 23.2 131.0 23.0 125.0C22.9 119.0 22.7 113.7 22.7 108.1C22.6 102.6 22.6 97.4 22.7 91.9C22.7 86.3 22.9 81.0 23.0 75.0C23.2 69.0 21.0 60.9 23.8 56.0C26.6 51.1 34.8 49.0 39.9 45.9C44.9 42.7 49.5 39.9 54.3 37.1C59.0 34.3 63.6 31.7 68.4 29.0C73.2 26.3 77.9 23.7 83.2 20.8C88.4 18.0 94.4 12.0 100.0 12.0Z"/>
+    </g>
+    <g id="isotipo">
+      <use href="#isotipo-capas"/>
+      <circle fill="#C8A96B" stroke="none" cx="100" cy="100" r="17"/>
+    </g>
+    <g id="isotipo-min" fill="none" stroke="currentColor" stroke-linejoin="round">
+      <path opacity=".55" d="M100.0 64.0C103.1 64.0 106.3 64.4 109.3 65.2C112.3 66.0 115.3 67.3 118.0 68.8C120.7 70.4 123.3 72.3 125.5 74.5C127.7 76.7 129.6 79.3 131.2 82.0C132.7 84.7 134.0 87.7 134.8 90.7C135.6 93.7 136.0 96.9 136.0 100.0C136.0 103.1 135.6 106.3 134.8 109.3C134.0 112.3 132.7 115.3 131.2 118.0C129.6 120.7 127.7 123.3 125.5 125.5C123.3 127.7 120.7 129.6 118.0 131.2C115.3 132.7 112.3 134.0 109.3 134.8C106.3 135.6 103.1 136.0 100.0 136.0C96.9 136.0 93.7 135.6 90.7 134.8C87.7 134.0 84.7 132.7 82.0 131.2C79.3 129.6 76.7 127.7 74.5 125.5C72.3 123.3 70.4 120.7 68.8 118.0C67.3 115.3 66.0 112.3 65.2 109.3C64.4 106.3 64.0 103.1 64.0 100.0C64.0 96.9 64.4 93.7 65.2 90.7C66.0 87.7 67.3 84.7 68.8 82.0C70.4 79.3 72.3 76.7 74.5 74.5C76.7 72.3 79.3 70.4 82.0 68.8C84.7 67.3 87.7 66.0 90.7 65.2C93.7 64.4 96.9 64.0 100.0 64.0Z"/>
+      <path opacity=".78" d="M100.0 42.0C104.8 42.0 109.8 44.8 114.3 46.6C118.9 48.4 123.1 50.4 127.3 52.8C131.4 55.2 135.3 57.9 139.1 60.9C142.9 63.9 147.8 66.9 150.2 71.0C152.6 75.1 152.7 80.9 153.4 85.7C154.1 90.5 154.5 95.2 154.5 100.0C154.5 104.8 154.1 109.5 153.4 114.3C152.7 119.1 152.6 124.9 150.2 129.0C147.8 133.1 142.9 136.1 139.1 139.1C135.3 142.1 131.4 144.8 127.3 147.2C123.1 149.6 118.9 151.6 114.3 153.4C109.8 155.2 104.8 158.0 100.0 158.0C95.2 158.0 90.2 155.2 85.7 153.4C81.1 151.6 76.9 149.6 72.7 147.2C68.6 144.8 64.7 142.1 60.9 139.1C57.1 136.1 52.2 133.1 49.8 129.0C47.4 124.9 47.3 119.1 46.6 114.3C45.9 109.5 45.5 104.8 45.5 100.0C45.5 95.2 45.9 90.5 46.6 85.7C47.3 80.9 47.4 75.1 49.8 71.0C52.2 66.9 57.1 63.9 60.9 60.9C64.7 57.9 68.6 55.2 72.7 52.8C76.9 50.4 81.1 48.4 85.7 46.6C90.2 44.8 95.2 42.0 100.0 42.0Z"/>
+      <path opacity="1" d="M100.0 20.0C106.3 20.0 112.9 26.7 118.8 29.9C124.6 33.1 129.8 35.9 135.2 39.1C140.6 42.2 145.6 45.2 151.3 48.7C157.0 52.2 166.2 54.6 169.3 60.0C172.4 65.4 169.9 74.6 170.1 81.2C170.3 87.9 170.4 93.7 170.4 100.0C170.4 106.3 170.3 112.1 170.1 118.8C169.9 125.4 172.4 134.6 169.3 140.0C166.2 145.4 157.0 147.8 151.3 151.3C145.6 154.8 140.6 157.8 135.2 160.9C129.8 164.1 124.6 166.9 118.8 170.1C112.9 173.3 106.3 180.0 100.0 180.0C93.7 180.0 87.1 173.3 81.2 170.1C75.4 166.9 70.2 164.1 64.8 160.9C59.4 157.8 54.4 154.8 48.7 151.3C43.0 147.8 33.8 145.4 30.7 140.0C27.6 134.6 30.1 125.4 29.9 118.8C29.7 112.1 29.6 106.3 29.6 100.0C29.6 93.7 29.7 87.9 29.9 81.2C30.1 74.6 27.6 65.4 30.7 60.0C33.8 54.6 43.0 52.2 48.7 48.7C54.4 45.2 59.4 42.2 64.8 39.1C70.2 35.9 75.4 33.1 81.2 29.9C87.1 26.7 93.7 20.0 100.0 20.0Z"/>
+      <circle fill="#C8A96B" stroke="none" cx="100" cy="100" r="21"/>
+    </g>
+  </defs>
+</svg>
+
+<div data-cabecera><header class="cabecera"><div class="cabecera__int"><a class="marca" href="/" aria-label="La filosofía del bostezo — inicio"><svg class="iso" viewBox="0 0 200 200" aria-hidden="true"><use href="#isotipo-min"/></svg><span class="marca-txt">La filosofía del<span>bostezo</span></span></a><nav aria-label="Principal"><ul class="menu"><li><a href="/investigacion">La investigación</a></li><li><a href="/#ensayos">Ensayos</a></li><li><a href="/autor">Quién escribe</a></li><li><a href="/#suscribir">Suscribirse</a></li></ul></nav><a class="cta" href="/#suscribir"><span class="largo">Recibir los&nbsp;ensayos</span><span class="corto">Suscribirse</span></a></div></header></div>
+
+<main id="principal">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-fondo" aria-hidden="true">
+      <svg class="campo" viewBox="0 0 200 200" id="campo"><use href="#isotipo-capas"/></svg>
+    </div>
+    <div class="env hero-int">
+      <svg class="iso iso-grande" viewBox="0 0 200 200" role="img" aria-label="Isotipo: capas concéntricas que van del círculo al hexágono">
+        <use href="#isotipo"/>
+      </svg>
+      <h1>La filosofía del <span class="segunda">bostezo</span></h1>
+      <figure class="hero-cita">
+        <blockquote>
+          Ver bostezar a un perro, a un caballo y a un hombre me hace sentir hasta qué punto
+          todos los animales están construidos sobre una misma estructura.
+        </blockquote>
+        <figcaption>Charles Darwin · <cite>Cuaderno M</cite>, 1838</figcaption>
+      </figure>
+      <div class="hero-acciones">
+        <a class="btn btn-solido" href="#arquitectura">Recorrer la arquitectura</a>
+        <a class="btn btn-fantasma" href="#manifiesto">Conocer el proyecto</a>
+        <a class="btn btn-fantasma" href="https://lafilosofiadelbostezo.substack.com" target="_blank" rel="noopener">Leer en Substack</a>
+      </div>
+      <div class="hero-pie">
+        <span>Ciencia</span><span>Filosofía</span><span>Clínica</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MANIFIESTO ================= -->
+  <section class="manifiesto bloque" id="manifiesto">
+    <div class="env manifiesto-rej con-cuadro">
+      <div class="rev">
+        <span class="etiqueta">La paradoja</span>
+        <p class="cita">
+          El bostezo conecta lo fisiológico con lo social y lo evolutivo.
+          <span class="destacado">Nada de lo vivo es realmente trivial.</span>
+        </p>
+      </div>
+      <figure class="cuadro rev">
+        <img src="/assets/img/ducreux.jpg"
+             srcset="/assets/img/ducreux-sm.jpg 520w, /assets/img/ducreux.jpg 900w"
+             sizes="(max-width:860px) 88vw, 34vw"
+             width="900" height="1171" loading="lazy" decoding="async"
+             alt="Autorretrato de Joseph Ducreux bostezando: un hombre con casaca roja, la boca muy abierta y los brazos estirados hacia arriba.">
+        <figcaption>
+          Joseph Ducreux, <cite>Autorretrato bostezando</cite>, h. 1783.
+          <span>Getty Museum · dominio público</span>
+        </figcaption>
+      </figure>
+      <div class="manifiesto-txt rev">
+        <p>
+          <strong>La filosofía del bostezo</strong> es un proyecto dedicado a explorar la complejidad
+          biológica: la emergencia, la criticalidad, las estructuras disipativas y el caos como
+          generador de orden.
+        </p>
+        <p>
+          El nombre es una paradoja deliberada. Un gesto que parece vacío resulta ser un fenómeno
+          de una sofisticación extraordinaria — y esa es, precisamente, la tesis: lo aparentemente
+          simple casi nunca lo es.
+        </p>
+        <p>
+          El proyecto vive en la intersección entre la ciencia, la filosofía de la biología y
+          dieciséis años de consulta. No es divulgación superficial. Es <em>pensamiento profundo
+          sobre lo vivo</em>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VALORES ================= -->
+  <section class="bloque" id="valores">
+    <div class="env">
+      <div class="rev">
+        <span class="etiqueta">Valores de marca</span>
+        <h2>Rigor orgánico</h2>
+        <p class="entradilla" style="margin-top:1.1rem">
+          Ni la frialdad clínica del laboratorio ni la blandura del texto terapéutico.
+          Un equilibrio entre organismo y pensamiento.
+        </p>
+      </div>
+      <div class="valores-rej rev">
+        <article class="valor">
+          <span class="num">01</span>
+          <h3>Rigor intelectual sin frialdad</h3>
+          <p>La precisión no está reñida con la calidez. Se cita, se comprueba y se escribe para ser leído.</p>
+        </article>
+        <article class="valor">
+          <span class="num">02</span>
+          <h3>Profundidad sin hermetismo</h3>
+          <p>Ideas difíciles explicadas con claridad, sin diluirlas hasta perder lo que las hacía interesantes.</p>
+        </article>
+        <article class="valor">
+          <span class="num">03</span>
+          <h3>Ciencia con sensibilidad</h3>
+          <p>Lo vivo se estudia, pero también se contempla. La estética forma parte del método.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EJES ================= -->
+  <section class="ejes bloque" id="arquitectura">
+    <div class="env">
+      <div class="rev">
+        <span class="etiqueta">El programa</span>
+        <h2>El mismo pulso a distintas escalas,<br>a distintas formas de complejidad</h2>
+      </div>
+      <div class="ejes-rej rev">
+        <article class="eje">
+          <span class="indice">El pulso</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.6 5.0 27.3 5.2 28.9 5.6C30.5 6.1 32.1 6.7 33.5 7.5C34.9 8.4 36.3 9.4 37.4 10.6C38.6 11.7 39.6 13.1 40.5 14.5C41.3 15.9 41.9 17.5 42.4 19.1C42.8 20.7 43.0 22.4 43.0 24.0C43.0 25.6 42.8 27.3 42.4 28.9C41.9 30.5 41.3 32.1 40.5 33.5C39.6 34.9 38.6 36.3 37.4 37.4C36.3 38.6 34.9 39.6 33.5 40.5C32.1 41.3 30.5 41.9 28.9 42.4C27.3 42.8 25.6 43.0 24.0 43.0C22.4 43.0 20.7 42.8 19.1 42.4C17.5 41.9 15.9 41.3 14.5 40.5C13.1 39.6 11.7 38.6 10.6 37.4C9.4 36.3 8.4 34.9 7.5 33.5C6.7 32.1 6.1 30.5 5.6 28.9C5.2 27.3 5.0 25.6 5.0 24.0C5.0 22.4 5.2 20.7 5.6 19.1C6.1 17.5 6.7 15.9 7.5 14.5C8.4 13.1 9.4 11.7 10.6 10.6C11.7 9.4 13.1 8.4 14.5 7.5C15.9 6.7 17.5 6.1 19.1 5.6C20.7 5.2 22.4 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>Un oscilador de relajación</h3>
+          <p>Acumular despacio, soltar de golpe cerca de un umbral. Ese es el formalismo — y aparece una y otra vez en lo vivo, a escalas que no se hablan entre sí.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">Célula</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.6 5.0 27.3 5.5 28.8 5.9C30.4 6.4 31.9 7.1 33.3 7.9C34.7 8.7 36.0 9.7 37.2 10.8C38.4 11.9 39.6 13.1 40.5 14.5C41.3 15.9 41.7 17.6 42.1 19.2C42.4 20.7 42.6 22.4 42.6 24.0C42.6 25.6 42.4 27.3 42.1 28.8C41.7 30.4 41.3 32.1 40.5 33.5C39.6 34.9 38.4 36.1 37.2 37.2C36.0 38.3 34.7 39.3 33.3 40.1C31.9 40.9 30.4 41.6 28.8 42.1C27.3 42.5 25.6 43.0 24.0 43.0C22.4 43.0 20.7 42.5 19.2 42.1C17.6 41.6 16.1 40.9 14.7 40.1C13.3 39.3 12.0 38.3 10.8 37.2C9.6 36.1 8.4 34.9 7.5 33.5C6.7 32.1 6.3 30.4 5.9 28.8C5.6 27.3 5.4 25.6 5.4 24.0C5.4 22.4 5.6 20.7 5.9 19.2C6.3 17.6 6.7 15.9 7.5 14.5C8.4 13.1 9.6 11.9 10.8 10.8C12.0 9.7 13.3 8.7 14.7 7.9C16.1 7.1 17.6 6.4 19.2 5.9C20.7 5.5 22.4 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>Pulsos de actomiosina</h3>
+          <p>La corteza de una célula late y organiza su forma. Lo que destapa el pulso no es una orden química: es el ablandamiento de la propia superficie.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">Postura</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.6 5.0 27.2 5.7 28.8 6.2C30.3 6.8 31.7 7.4 33.1 8.2C34.5 9.0 35.8 9.9 37.0 11.0C38.2 12.0 39.7 13.1 40.5 14.5C41.2 15.9 41.5 17.7 41.8 19.2C42.1 20.8 42.2 22.4 42.2 24.0C42.2 25.6 42.1 27.2 41.8 28.8C41.5 30.3 41.2 32.1 40.5 33.5C39.7 34.9 38.2 36.0 37.0 37.0C35.8 38.1 34.5 39.0 33.1 39.8C31.7 40.6 30.3 41.2 28.8 41.8C27.2 42.3 25.6 43.0 24.0 43.0C22.4 43.0 20.8 42.3 19.2 41.8C17.7 41.2 16.3 40.6 14.9 39.8C13.5 39.0 12.2 38.1 11.0 37.0C9.8 36.0 8.3 34.9 7.5 33.5C6.8 32.1 6.5 30.3 6.2 28.8C5.9 27.2 5.8 25.6 5.8 24.0C5.8 22.4 5.9 20.8 6.2 19.2C6.5 17.7 6.8 15.9 7.5 14.5C8.3 13.1 9.8 12.0 11.0 11.0C12.2 9.9 13.5 9.0 14.9 8.2C16.3 7.4 17.7 6.8 19.2 6.2C20.8 5.7 22.4 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>Tono cerca del filo</h3>
+          <p>Estar de pie es sostener un péndulo inestable. El sistema no se estabiliza: se mantiene oscilando cerca de un umbral, que es donde puede corregir más rápido.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">Organismo</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.6 5.0 27.2 5.9 28.7 6.5C30.2 7.1 31.6 7.8 32.9 8.5C34.3 9.3 35.6 10.2 36.8 11.2C38.1 12.2 39.7 13.1 40.5 14.5C41.2 15.9 41.3 17.7 41.5 19.3C41.7 20.9 41.9 22.4 41.9 24.0C41.9 25.6 41.7 27.1 41.5 28.7C41.3 30.3 41.2 32.1 40.5 33.5C39.7 34.9 38.1 35.8 36.8 36.8C35.6 37.8 34.3 38.7 32.9 39.5C31.6 40.2 30.2 40.9 28.7 41.5C27.2 42.1 25.6 43.0 24.0 43.0C22.4 43.0 20.8 42.1 19.3 41.5C17.8 40.9 16.4 40.2 15.1 39.5C13.7 38.7 12.4 37.8 11.2 36.8C9.9 35.8 8.3 34.9 7.5 33.5C6.8 32.1 6.7 30.3 6.5 28.7C6.3 27.1 6.1 25.6 6.1 24.0C6.1 22.4 6.3 20.9 6.5 19.3C6.7 17.7 6.8 15.9 7.5 14.5C8.3 13.1 9.9 12.2 11.2 11.2C12.4 10.2 13.7 9.3 15.1 8.5C16.4 7.8 17.8 7.1 19.3 6.5C20.8 5.9 22.4 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>El bostezo</h3>
+          <p>El mismo patrón, ahora de cuerpo entero y en segundos: respiración, mandíbula, eje, tono, alerta y fluidos craneales, todo a la vez, en las fronteras entre estados.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">El constructor</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.5 5.0 27.2 6.1 28.6 6.8C30.1 7.4 31.4 8.1 32.7 8.9C34.1 9.6 35.3 10.5 36.6 11.4C37.9 12.3 39.7 13.2 40.5 14.5C41.2 15.8 41.0 17.8 41.2 19.4C41.4 21.0 41.5 22.5 41.5 24.0C41.5 25.5 41.4 27.0 41.2 28.6C41.0 30.2 41.2 32.2 40.5 33.5C39.7 34.8 37.9 35.7 36.6 36.6C35.3 37.5 34.1 38.4 32.7 39.1C31.4 39.9 30.1 40.6 28.6 41.2C27.2 41.9 25.5 43.0 24.0 43.0C22.5 43.0 20.8 41.9 19.4 41.2C17.9 40.6 16.6 39.9 15.3 39.1C13.9 38.4 12.7 37.5 11.4 36.6C10.1 35.7 8.3 34.8 7.5 33.5C6.8 32.2 7.0 30.2 6.8 28.6C6.6 27.0 6.5 25.5 6.5 24.0C6.5 22.5 6.6 21.0 6.8 19.4C7.0 17.8 6.8 15.8 7.5 14.5C8.3 13.2 10.1 12.3 11.4 11.4C12.7 10.5 13.9 9.6 15.3 8.9C16.6 8.1 17.9 7.4 19.4 6.8C20.8 6.1 22.5 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>La cresta neural</h3>
+          <p>De 84 derivados de esta población embrionaria, el 76% son tensionales: sensores, andamios y generadores de tono. Construye justo el aparato sobre el que el pulso actúa.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">El régimen</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.5 5.0 27.1 6.4 28.5 7.1C30.0 7.8 31.2 8.4 32.5 9.2C33.9 10.0 35.1 10.7 36.4 11.6C37.7 12.5 39.7 13.2 40.5 14.5C41.2 15.8 40.8 17.9 40.9 19.5C41.0 21.0 41.1 22.5 41.1 24.0C41.1 25.5 41.0 27.0 40.9 28.5C40.8 30.1 41.2 32.2 40.5 33.5C39.7 34.8 37.7 35.5 36.4 36.4C35.1 37.3 33.9 38.0 32.5 38.8C31.2 39.6 30.0 40.2 28.5 40.9C27.1 41.6 25.5 43.0 24.0 43.0C22.5 43.0 20.9 41.6 19.5 40.9C18.0 40.2 16.8 39.6 15.5 38.8C14.1 38.0 12.9 37.3 11.6 36.4C10.3 35.5 8.3 34.8 7.5 33.5C6.8 32.2 7.2 30.1 7.1 28.5C7.0 27.0 6.9 25.5 6.9 24.0C6.9 22.5 7.0 21.0 7.1 19.5C7.2 17.9 6.8 15.8 7.5 14.5C8.3 13.2 10.3 12.5 11.6 11.6C12.9 10.7 14.1 10.0 15.5 9.2C16.8 8.4 18.0 7.8 19.5 7.1C20.9 6.4 22.5 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>La criticidad</h3>
+          <p>Ni orden rígido ni ruido. El punto donde un sistema vivo conserva la forma y a la vez puede cambiar de régimen sin romperse.</p>
+        </article>
+      </div>
+      <p class="remate rev">No es la misma materia: es la misma forma dinámica.</p>
+    </div>
+  </section>
+
+  <section class="bloque" id="horizonte">
+    <div class="env">
+      <div class="rev espera">
+        <span class="etiqueta">El horizonte</span>
+        <h2>Y detrás, una pregunta más grande</h2>
+        <p class="entradilla" style="margin-top:1.1rem">
+          El programa del bostezo es la punta de algo mayor: cómo lo vivo mantiene su forma frente
+          a la entropía. Ahí entran la célula embrionaria que construye la interfaz del sentir, la
+          memoria molecular que fija una geometría y la desgasta al envejecer, la red que cambia de
+          topología con cada estado, y el vínculo que regula a dos organismos como si fueran uno.
+        </p>
+        <p style="max-width:62ch;margin-top:1.2rem;color:var(--texto-tenue)">
+          Eso es el marco en el que este trabajo desemboca. Pero se entra por el bostezo: un acto
+          concreto, medible, que ocurre varias veces al día en todos los vertebrados y del que casi
+          nadie ha mirado la parte mecánica.
+        </p>
+        <p style="max-width:62ch;margin-top:1.2rem;color:var(--texto-tenue)">
+          Y lo que se aprende ahí no se queda ahí. Leer un proceso por dónde acumula, qué lo
+          dispara y en qué umbral cruza es una <em>óptica</em>, y funciona a cualquier escala de lo
+          vivo: una célula que organiza su forma, un tejido que recupera tono, una persona tumbada
+          en una camilla. En la consulta el cambio es muy concreto — se deja de preguntar qué
+          hacerle a un cuerpo y se empieza por preguntar qué está haciendo él solo, y cuándo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ejes bloque" id="aplicaciones">
+    <div class="env">
+      <div class="rev">
+        <span class="etiqueta">Aplicaciones</span>
+        <h2>Qué cambia en la práctica</h2>
+        <p class="entradilla" style="margin-top:1.1rem">
+          Entender un proceso por dónde acumula y en qué umbral cruza no es un ejercicio abstracto:
+          modifica qué se mira cuando hay un cuerpo delante.
+        </p>
+      </div>
+      <div class="ejes-rej rev" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <article class="eje">
+          <span class="indice">Hoy</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.6 5.0 27.3 5.2 28.9 5.6C30.5 6.1 32.1 6.7 33.5 7.5C34.9 8.4 36.3 9.4 37.4 10.6C38.6 11.7 39.6 13.1 40.5 14.5C41.3 15.9 41.9 17.5 42.4 19.1C42.8 20.7 43.0 22.4 43.0 24.0C43.0 25.6 42.8 27.3 42.4 28.9C41.9 30.5 41.3 32.1 40.5 33.5C39.6 34.9 38.6 36.3 37.4 37.4C36.3 38.6 34.9 39.6 33.5 40.5C32.1 41.3 30.5 41.9 28.9 42.4C27.3 42.8 25.6 43.0 24.0 43.0C22.4 43.0 20.7 42.8 19.1 42.4C17.5 41.9 15.9 41.3 14.5 40.5C13.1 39.6 11.7 38.6 10.6 37.4C9.4 36.3 8.4 34.9 7.5 33.5C6.7 32.1 6.1 30.5 5.6 28.9C5.2 27.3 5.0 25.6 5.0 24.0C5.0 22.4 5.2 20.7 5.6 19.1C6.1 17.5 6.7 15.9 7.5 14.5C8.4 13.1 9.4 11.7 10.6 10.6C11.7 9.4 13.1 8.4 14.5 7.5C15.9 6.7 17.5 6.1 19.1 5.6C20.7 5.2 22.4 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>Leer por transiciones, no por estados</h3>
+          <p>Un cuerpo enseña su organización en los umbrales, no en el reposo. En la práctica es un cambio de foco: mirar qué hace alguien cuando pasa de un estado a otro —al tumbarse, al soltar el aire, al dormirse— en vez de solo cómo está cuando está quieto.</p>
+          <p class="nota">Esto no depende de que la hipótesis se confirme. Es una manera de mirar.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">Hoy</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.6 5.0 27.2 5.9 28.7 6.5C30.2 7.1 31.6 7.8 32.9 8.5C34.3 9.3 35.6 10.2 36.8 11.2C38.1 12.2 39.7 13.1 40.5 14.5C41.2 15.9 41.3 17.7 41.5 19.3C41.7 20.9 41.9 22.4 41.9 24.0C41.9 25.6 41.7 27.1 41.5 28.7C41.3 30.3 41.2 32.1 40.5 33.5C39.7 34.9 38.1 35.8 36.8 36.8C35.6 37.8 34.3 38.7 32.9 39.5C31.6 40.2 30.2 40.9 28.7 41.5C27.2 42.1 25.6 43.0 24.0 43.0C22.4 43.0 20.8 42.1 19.3 41.5C17.8 40.9 16.4 40.2 15.1 39.5C13.7 38.7 12.4 37.8 11.2 36.8C9.9 35.8 8.3 34.9 7.5 33.5C6.8 32.1 6.7 30.3 6.5 28.7C6.3 27.1 6.1 25.6 6.1 24.0C6.1 22.4 6.3 20.9 6.5 19.3C6.7 17.7 6.8 15.9 7.5 14.5C8.3 13.1 9.9 12.2 11.2 11.2C12.4 10.2 13.7 9.3 15.1 8.5C16.4 7.8 17.8 7.1 19.3 6.5C20.8 5.9 22.4 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>Una prueba de carga que el cuerpo se administra solo</h3>
+          <p>El bostezo solicita a la vez respiración, postura, tono, alerta y fluidos craneales. Su coherencia —o su falta de ella— informa del acoplamiento del conjunto. Y no hay que provocarlo: ocurre solo, varias veces al día, gratis y sin instrumentos.</p>
+          <p class="nota">Observable ya. Su valor como medida está por demostrar.</p>
+        </article>
+        <article class="eje">
+          <span class="indice">Si se confirma</span>
+          <svg class="eje-marca" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24.0 5.0C25.5 5.0 27.1 6.6 28.5 7.4C29.9 8.1 31.1 8.8 32.4 9.5C33.6 10.3 34.8 11.0 36.2 11.8C37.5 12.6 39.7 13.2 40.5 14.5C41.2 15.8 40.6 18.0 40.6 19.5C40.7 21.1 40.7 22.5 40.7 24.0C40.7 25.5 40.7 26.9 40.6 28.5C40.6 30.0 41.2 32.2 40.5 33.5C39.7 34.8 37.5 35.4 36.2 36.2C34.8 37.0 33.6 37.7 32.4 38.5C31.1 39.2 29.9 39.9 28.5 40.6C27.1 41.4 25.5 43.0 24.0 43.0C22.5 43.0 20.9 41.4 19.5 40.6C18.1 39.9 16.9 39.2 15.6 38.5C14.4 37.7 13.2 37.0 11.8 36.2C10.5 35.4 8.3 34.8 7.5 33.5C6.8 32.2 7.4 30.0 7.4 28.5C7.3 26.9 7.3 25.5 7.3 24.0C7.3 22.5 7.3 21.1 7.4 19.5C7.4 18.0 6.8 15.8 7.5 14.5C8.3 13.2 10.5 12.6 11.8 11.8C13.2 11.0 14.4 10.3 15.6 9.5C16.9 8.8 18.1 8.1 19.5 7.4C20.9 6.6 22.5 5.0 24.0 5.0Z"/>
+          </svg>
+          <h3>El bostezo alterado como señal, no como anécdota</h3>
+          <p>Tras un ictus, en la esclerosis múltiple o en el Parkinson, el bostezo se altera como conjunto. Leerlo como un sistema de calibración que ha perdido su punto de operación —y no como un síntoma accesorio— cambia qué merece la pena mirar.</p>
+          <p class="nota">La alteración está documentada. La lectura es del programa.</p>
+        </article>
+      </div>
+      <p class="cautela rev">
+        Nada de esto es un tratamiento ni una técnica. El experimento que decidiría si el bostezo
+        <em>opera</em> las transiciones o solo las acompaña todavía no se ha hecho — y hasta que se
+        haga, lo aplicable es la óptica, no una intervención.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= ENSAYOS ================= -->
+  <section class="bloque" id="ensayos">
+    <div class="env">
+      <div class="rev">
+        <span class="etiqueta">Ensayos</span>
+        <h2>Lo publicado</h2>
+        <p class="entradilla" style="margin-top:1.1rem">
+          Textos largos, sin prisa. Se publican en Substack y llegan por correo a quien los haya pedido.
+          Del más reciente al primero.
+        </p>
+      </div>
+      <div class="ensayos-rej rev">
+        <a class="ensayo" href="https://lafilosofiadelbostezo.substack.com/p/el-acto-cognitivo-primer-acto-de" target="_blank" rel="noopener">
+          <div class="ensayo-arte">
+            <svg viewBox="0 0 320 200" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+              <g class="l">
+                <path d="M96 46 V154"/>
+                <path d="M78 100 a26 26 0 0 1 -52 0 a26 26 0 0 1 52 0"/>
+                <path d="M114 100 a26 26 0 0 1 52 0 a26 26 0 0 1 -52 0"/>
+                <circle cx="228" cy="100" r="38"/>
+                <circle cx="266" cy="100" r="38"/>
+              </g>
+              <circle class="p" cx="247" cy="100" r="9"/>
+            </svg>
+          </div>
+          <div class="ensayo-cuerpo">
+            <span class="ensayo-meta">13 de agosto de 2026</span>
+            <h3>El acto cognitivo, primer acto de autopercepción</h3>
+            <p>Saber separando o saber acoplando. Una definición mínima de cognición que sirva
+            a cualquier escala — y la cláusula que impide que lo abarque todo.</p>
+            <span class="ensayo-leer">Leer en Substack
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="ensayo" href="https://lafilosofiadelbostezo.substack.com/p/la-forma-sin-diana" target="_blank" rel="noopener">
+          <div class="ensayo-arte">
+            <svg viewBox="0 0 320 200" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+              <circle class="l" cx="160" cy="100" r="26"/><circle class="l" cx="160" cy="100" r="48"/>
+              <circle class="l" cx="160" cy="100" r="70"/><circle class="l" cx="160" cy="100" r="92"/>
+              <circle class="l" cx="160" cy="100" r="114"/>
+              <circle class="p" cx="160" cy="100" r="12"/>
+            </svg>
+          </div>
+          <div class="ensayo-cuerpo">
+            <span class="ensayo-meta">11 de agosto de 2026</span>
+            <h3>La forma sin diana</h3>
+            <p>Por qué el axolotl regenera exactamente una pata — y por qué quizá no necesita un plano para hacerlo.</p>
+            <span class="ensayo-leer">Leer en Substack
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SUSCRIPCIÓN ================= -->
+  <section class="suscribir bloque" id="suscribir">
+    <div class="env"><div class="suscribir-int rev">
+      <span class="etiqueta">Carta periódica</span>
+      <h2>Un ensayo largo,<br>cuando esté listo.</h2>
+      <p>
+        Sin resúmenes, sin titulares y sin prisa. Textos largos sobre cómo lo vivo mantiene
+        su forma, escritos para leerse enteros de una sentada.
+      </p>
+      <form class="forma" id="forma" novalidate>
+        <label for="correo" class="salto">Tu correo electrónico</label>
+        <input id="correo" name="correo" type="email" required placeholder="tu@correo.com" autocomplete="email">
+        <button class="btn btn-solido" type="submit">Suscribirme</button>
+      </form>
+      <p class="aviso">Publicado en Substack. Solo llega correo cuando hay ensayo; baja en un clic.</p>
+      <p class="gracias" id="gracias">Te llevo a Substack para confirmar la suscripción…</p>
+    </div></div>
+  </section>
+
+</main>
+
+<div data-pie><footer class="pie"><div class="pie__int"><span>© 2026 Ian de Pablo Ruf · Andorra</span><span class="pie__enlaces"><a href="/investigacion">La investigación</a><a href="/autor">Quién escribe</a><a href="https://lafilosofiadelbostezo.substack.com" rel="me" target="_blank">Substack</a></span><span class="pie__paleta" title="Paleta oficial"><i style="background:#F6F1E8"></i><i style="background:#3F5A4B"></i><i style="background:#1E2A44"></i><i style="background:#2F3A3D"></i><i style="background:#C8A96B"></i></span></div></footer></div>
+
+<script>
+(function(){
+  var SUBSTACK = 'https://lafilosofiadelbostezo.substack.com';
+  var reducido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revelables = document.querySelectorAll('.rev');
+  function revelarTodo(){ revelables.forEach(function(el){ el.classList.add('dentro'); }); }
+
+  /* Revelado progresivo — primero y a prueba de fallos:
+     si algo va mal, el contenido se muestra igualmente. */
+  try{
+    if('IntersectionObserver' in window && !reducido){
+      var obs = new IntersectionObserver(function(entradas){
+        entradas.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('dentro'); obs.unobserve(e.target); }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      revelables.forEach(function(el){ obs.observe(el); });
+      /* red de seguridad: nada permanece invisible más de 3 s */
+      setTimeout(revelarTodo, 3000);
+    } else {
+      revelarTodo();
+    }
+  }catch(e){ revelarTodo(); }
+
+  /* Campo del hero: giro mínimo al desplazar */
+  try{
+    var campo = document.getElementById('campo');
+    if(campo && !reducido){
+      window.addEventListener('scroll', function(){
+        campo.style.transform = 'translate(-50%,-50%) rotate(' + (window.scrollY * 0.02) +
+          'deg) scale(' + (1 + window.scrollY * 0.00012) + ')';
+      }, {passive:true});
+    }
+  }catch(e){}
+
+  /* Suscripción: recoge el correo y lo pasa a Substack */
+  try{
+    var forma = document.getElementById('forma');
+    if(forma){
+      forma.addEventListener('submit', function(ev){
+        ev.preventDefault();
+        var correo = document.getElementById('correo');
+        if(!correo || !correo.value || correo.value.indexOf('@') === -1){ if(correo) correo.focus(); return; }
+        var gracias = document.getElementById('gracias');
+        if(gracias) gracias.classList.add('visible');
+        window.open(SUBSTACK + '/subscribe?email=' + encodeURIComponent(correo.value), '_blank', 'noopener');
+      });
+    }
+  }catch(e){}
+})();
+</script>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
