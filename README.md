@@ -47,8 +47,11 @@ Dos ramas, y la diferencia importa:
 
 | Rama | Dónde sale | Para qué |
 |---|---|---|
-| `main` | `filosofiadelbostezo.com` | lo público, lo que lee cualquiera |
+| `main` | `filosofiadelbostezo.pages.dev` → `filosofiadelbostezo.com` | lo público, lo que lee cualquiera |
 | `borrador` | `borrador.filosofiadelbostezo.pages.dev` | probar antes de publicar |
+
+Alojamiento: Cloudflare Pages, proyecto `filosofiadelbostezo`, conectado a
+`github.com/malevolgiaprints/filosofiadelbostezo`.
 
 Cloudflare Pages publica sola: al subir un cambio a `borrador`, la URL de borrador
 se actualiza en unos veinte segundos. Nada de eso toca el dominio público. Cuando
